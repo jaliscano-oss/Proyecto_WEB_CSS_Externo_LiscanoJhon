@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión - ShopEasy</title>
+  <link rel="icon" href="/img/icon/carrito-de-compras.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/general.css">
+</head>
+
+<body>
+
+  <!-- ENCABEZADO CON LOGO -->
+  <header>
+    <!-- Logo del carrito -->
+    <div>
+      <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy"/>
+      <div>
+        <h1>ShopEasy</h1>
+        <p><em>Compra fácil, recibe rápido.</em></p>
+      </div>
+    </div>
+    <!-- <nav aria-label="Navegación principal" style="margin-top: 15px;">
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="display: inline; margin: 0 15px;"><a href="../home.html"
+            style="color: #2358a8; text-decoration: none; font-weight: bold;"><i class="fa-solid fa-house"></i>
+            Inicio</a></li>
+        <li style="display: inline; margin: 0 15px;"><a href="../catalogo/catalogo.html"
+            style="color: #2358a8; text-decoration: none; font-weight: bold;"><i class="fa-solid fa-box"></i>
+            Catálogo</a></li>
+        <li style="display: inline; margin: 0 15px;"><a href="../login/login.html"
+            style="color: #f76b1c; text-decoration: none; font-weight: bold;"><i
+              class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></li>
+        <li style="display: inline; margin: 0 15px;"><a href="../registro/registro.html"
+            style="color: #2358a8; text-decoration: none; font-weight: bold;"><i class="fa-solid fa-building-user"></i>
+            Registrarse</a></li>
+      </ul>
+    </nav> -->
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <section>
+      <!-- Icono de carrito pequeño encima del formulario -->
+      <div class="logo-contenido">
+        <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy"/>
+      </div>
+
+      <h2 id="titulo-login">Iniciar sesión</h2>
+      <p>Ingresa con tu cuenta ShopEasy para continuar.</p>
+
+      <form action="../home.html" method="get" novalidate>
+        <!-- Tipo de usuario -->
+        <fieldset>
+          <legend>Ingresar como</legend>
+          <label>
+            <input type="radio" name="rol" value="comprador" checked/>Comprador
+          </label>
+          <label>
+            <input type="radio" name="rol" value="vendedor"/>Vendedor
+          </label>
+          <label>
+            <input type="radio" name="rol" value="administrador"/>Administrador
+          </label>
+        </fieldset>
+
+        <!-- Correo -->
+        <div>
+          <label for="email">Correo electrónico <abbr title="campo obligatorio">*</abbr>
+          </label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required/>
+        </div>
+
+        <!-- Contraseña -->
+        <div>
+          <label for="password">Contraseña <abbr title="campo obligatorio">*</abbr>
+          </label>
+          <input type="password" id="password" name="password" placeholder="Tu contraseña"
+            autocomplete="current-password" required/>
+        </div>
+
+        <!-- Recordar sesión -->
+        <div>
+          <label>
+            <input type="checkbox" name="recordar" value="si"/>Mantener sesión iniciada
+          </label>
+        </div>
+
+        <!-- Botones -->
+        <div>
+          <button type="submit">Iniciar sesión</button>
+          <button type="reset">Limpiar</button>
+        </div>
+      </form>
+
+      <hr/>
+
+      <div>
+        <p>¿Olvidaste tu contraseña?</a></p>
+        <p>¿No tienes cuenta? <a href="../registro/registro.html">Regístrate gratis</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</p>
+    <nav>
+      <ul>
+        <li><a href="../home.html">Inicio</a></li>
+        <li><a href="../catalogo/catalogo.html">Catálogo</a></li>
+        <li><a href="../registro/registro.html">Registrarse</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+
+</html>

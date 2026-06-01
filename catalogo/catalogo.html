@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo - ShopEasy</title>
+    <link rel="icon" href="/img/icon/carrito-de-compras.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/general.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO / NAVEGACIÓN -->
+    <header>
+        <!-- Icono de carrito pequeño encima del formulario -->
+        <div class="logo-contenido">
+            <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
+        </div>
+        <h1>ShopEasy</h1>
+        <p><em>Compra fácil, recibe rápido.</em></p>
+        <nav>
+            <ul>
+                <li><a href="../home.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="../catalogo/catalogo.html"><i class="fa-solid fa-box"></i> Catálogo</a></li>
+                <li><a href="../login/login.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></li>
+                <li><a href="../registro/registro.html"><i class="fa-solid fa-building-user"></i> Registrarse</a></li>
+                <li><a href="../carrito/carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito (3)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Barra de búsqueda -->
+    <div class="barra-busqueda">
+        <form action="../catalogo/catalogo.html" method="get">
+            <input type="search" name="q" placeholder="Buscar productos, marcas y más..." />
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
+        </form>
+    </div>
+
+    <div class="catalogo-layout">
+        <!-- Sidebar filtros -->
+        <aside class="sidebar">
+            <h2>Filtros</h2>
+            <form action="../catalogo/catalogo.html" method="get">
+
+                <div class="filtro-grupo">
+                    <h3>Categoría</h3>
+                    <label><input type="checkbox" name="cat" value="electronica" checked /> Electrónica</label>
+                    <label><input type="checkbox" name="cat" value="ropa" /> Ropa
+                        y Moda</label>
+                    <label><input type="checkbox" name="cat" value="hogar" />
+                        Hogar</label>
+                    <label><input type="checkbox" name="cat" value="deportes" />
+                        Deportes</label>
+                    <label><input type="checkbox" name="cat" value="libros" />
+                        Libros</label>
+                    <label><input type="checkbox" name="cat" value="juguetes" />
+                        Juguetes</label>
+                </div>
+
+                <div class="filtro-grupo">
+                    <h3>Calificación</h3>
+                    <label><input type="radio" name="stars" value="5" /> ★★★★★ 5
+                        estrellas</label>
+                    <label><input type="radio" name="stars" value="4" checked />
+                        ★★★★☆ 4 o más</label>
+                    <label><input type="radio" name="stars" value="3" /> ★★★☆☆ 3
+                        o más</label>
+                </div>
+
+                <div class="filtro-grupo">
+                    <h3>Precio ($)</h3>
+                    <label for="min">Mínimo</label>
+                    <input type="number" id="min" name="min" placeholder="0" min="0" />
+                    <label for="max">Máximo</label>
+                    <input type="number" id="max" name="max" placeholder="1000" min="0" />
+                </div>
+
+                <div class="filtro-grupo">
+                    <h3>Disponibilidad</h3>
+                    <label><input type="checkbox" name="stock" value="disponible" checked />Solo en stock</label>
+                    <label>
+                        <input type="checkbox" name="envio" value="gratis" /> Envío gratis</label>
+                </div>
+
+                <div class="filtro-grupo" style="margin-bottom: 20px;">
+                    <h3 style="color: #34495e; margin-bottom: 10px;">Ordenar por</h3>
+                    <select name="orden" style="width: 100%; padding: 8px; border-radius: 5px;">
+                        <option value="relevancia">Relevancia</option>
+                        <option value="precio-asc">Precio: menor a mayor</option>
+                        <option value="precio-desc">Precio: mayor a menor</option>
+                        <option value="nuevo">Más nuevos</option>
+                        <option value="mejor">Mejor calificados</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-filtro">Aplicar filtros</button>
+                <button type="reset" class="btn-limpiar">Limpiar</button>
+            </form>
+        </aside>
+
+        <!-- Productos -->
+        <section class="catalogo-main">
+            <div class="catalogo-barra">
+                <p>Mostrando <strong>6 de 124</strong> productos en<strong>Electrónica</strong></p>
+            </div>
+
+            <div class="tabla-wrap">
+                <table>
+                    <caption>Lista de productos disponibles en ShopEasy</caption>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Antes</th>
+                            <th>Descuento</th>
+                            <th>Calificación</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#producto.html?id=501">Auriculares Bluetooth Pro</a></td>
+                            <td>Electrónica</td>
+                            <td><strong>$45.99</strong></td>
+                            <td><s>$57.99</s></td>
+                            <td>20%</td>
+                            <td>★★★★☆ (128)</td>
+                            <td><span class="badge badge-verde">
+                            </td>
+                            <td>
+                                <a href="#producto.html?id=501" class="btn-ver">Ver</a>
+                                <a href="#carrito.html?agregar=501" class="btn-agregar">🛒 Agregar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#producto.html?id=502">Zapatillas Running Lite</a></td>
+                            <td>Deportes</td>
+                            <td><strong>$89.00</strong></td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>★★★★★ (64)</td>
+                            <td><span class="badge badge-verde">Disponible</span>
+                            </td>
+                            <td>
+                                <a href="#producto.html?id=502" class="btn-ver">Ver</a>
+                                <a href="#carrito.html?agregar=502" class="btn-agregar">🛒 Agregar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#producto.html?id=503">Mochila Urban Slim 20L</a></td>
+                            <td>Accesorios</td>
+                            <td><strong>$34.50</strong></td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>★★★★☆ (41)</td>
+                            <td><span class="badge badge-verde">Disponible</span>
+                            </td>
+                            <td>
+                                <a href="#producto.html?id=503" class="btn-ver">Ver</a>
+                                <a href="#carrito.html?agregar=503" class="btn-agregar">🛒 Agregar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#producto.html?id=504">Smartwatch FitPro X2</a></td>
+                            <td>Electrónica</td>
+                            <td><strong>$79.99</strong></td>
+                            <td><s>$122.99</s></td>
+                            <td>35%</td>
+                            <td>★★★★☆ (89)</td>
+                            <td><span class="badge badge-amarillo">Últimas 3</span></td>
+                            <td>
+                                <a href="#producto.html?id=504" class="btn-ver">Ver</a>
+                                <a href="#carrito.html?agregar=504" class="btn-agregar">🛒 Agregar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#producto.html?id=505">Laptop UltraBook 15"</a></td>
+                            <td>Electrónica</td>
+                            <td><strong>$649.99</strong></td>
+                            <td><s>$899.99</s></td>
+                            <td>28%</td>
+                            <td>★★★★★ (210)</td>
+                            <td><span class="badge badge-verde">Disponible</span>
+                            </td>
+                            <td>
+                                <a href="#producto.html?id=505" class="btn-ver">Ver</a>
+                                <a href="#carrito.html?agregar=505" class="btn-agregar">🛒 Agregar</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#producto.html?id=506">Control Gaming Inalámbrico</a></td>
+                            <td>Electrónica</td>
+                            <td><strong>$39.99</strong></td>
+                            <td><s>$60.00</s></td>
+                            <td>33%</td>
+                            <td>★★★★☆ (45)</td>
+                            <td><span class="badge badge-rojo">Agotado</span>
+                            </td>
+                            <td>
+                                <a href="#producto.html?id=506" class="btn-ver">Ver</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">
+                                Página:
+                                <a href="#">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">…</a>
+                                <a href="#">Siguiente →</a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</p>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="../home.html">Inicio</a></li>
+                <li><a href="../login/login.html">Iniciar sesión</a></li>
+                <li><a href="../registro/registro.html">Registrarse</a></li>
+                <li><a href="../carrito/carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+
+</html>

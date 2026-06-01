@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de compras - ShopEasy</title>
+    <link rel="icon" href="../img/icon/carrito-de-compras.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/general.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO CON LOGO -->
+    <header>
+        <section>
+            <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy"/>
+            <section>
+                <h1>ShopEasy</h1>
+                <p><em>Compra fácil, recibe rápido.</em></p>
+            </section>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="../home.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="../catalogo/catalogo.html"><i class="fa-solid fa-box"></i> Catálogo</a></li>
+                <li><a href="../login/login.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></li>
+                <li><a href="../registro/registro.html"><i class="fa-solid fa-building-user"></i> Registrarse</a></li>
+                <li><a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito (3)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <section>
+            <h2>Mi carrito de compras</h2>
+            <p>3 productos</strong> en tu carrito.</p>
+
+            <!-- ── LISTA DE PRODUCTOS EN EL CARRITO ──────────────── -->
+            <section>
+                <h3>Productos seleccionados</h3>
+
+                <form action="../pago/pago.html" method="get">
+
+                    <!-- Producto 1 -->
+                    <article>
+                        <h4><a href="#producto.html?id=501">Auriculares Bluetooth Pro</a></h4>
+                        <p ><strong>Categoría:</strong> <span
+                                style="color: #666;">Electrónica</span></p>
+                        <p><strong>Vendido por:</strong> <span>TechStore EC</span></p>
+                        <p><strong>Precio unitario:</strong> <strong>$45.99</strong> <s>$57.99</s></p>
+                        <p>
+                            <label for="qty-501">Cantidad:</label>
+                            <input type="number" id="qty-501" name="cantidad_501" value="1" min="1" max="12"/>
+                        </p>
+                        <p><strong>Subtotal:</strong><strong>$45.99</strong></p>
+                        <p><strong>Disponibilidad:</strong> <strong>En stock</strong></p>
+                        <p><a href="#" onclick="return confirm('¿Eliminar Auriculares Bluetooth Pro del carrito?');">Eliminar producto</a></p>
+                    </article>
+
+                    <!-- Producto 2 -->
+                    <article>
+                        <h4><a href="#producto.html?id=503">Mochila Urban Slim 20L</a></h4>
+                        <p><strong>Categoría:</strong> <span>Accesorios</span></p>
+                        <p><strong>Vendido por:</strong> <span>BagsWorld</span></p>
+                        <p><strong>Precio unitario:</strong> <strong>$34.50</strong></p>
+                        <p>
+                            <label for="qty-503">Cantidad:</label>
+                            <input type="number" id="qty-503" name="cantidad_503" value="2" min="1" max="10"/>
+                        </p>
+                        <p><strong>Subtotal:</strong> <strong>$69.00</strong></p>
+                        <p><strong>Disponibilidad:</strong> <strong>En stock</strong></p>
+                        <p><a href="#" onclick="return confirm('¿Eliminar Mochila Urban Slim del carrito?');">Eliminar producto</a></p>
+                    </article>
+
+                    <!-- Producto 3 -->
+                    <article>
+                        <h4><a href="#producto.html?id=504">Smartwatch FitPro X2</a></h4>
+                        <p><strong>Categoría:</strong> <span>Electrónica</span></p>
+                        <p><strong>Vendido por:</strong> <span>TechStore EC</span></p>
+                        <p><strong>Precio unitario:</strong> <strong>$79.99</strong></p>
+                        <p>
+                            <label for="qty-504">Cantidad:</label>
+                            <input type="number" id="qty-504" name="cantidad_504" value="1" min="1" max="3"/>
+                        </p>
+                        <p><strong>Subtotal:</strong> <strong>$79.99</strong></p>
+                        <p><strong>Disponibilidad:</strong> <strong>Últimas 3 unidades</strong></p>
+                        <p><a href="#" onclick="return confirm('¿Eliminar Smartwatch FitPro X2 del carrito?');">Eliminar producto</a></p>
+                    </article>
+
+                    <!-- Cupón de descuento -->
+                    <section>
+                        <h3>Código de descuento</h3>
+                        <label for="cupon">¿Tienes un cupón?</label>
+                        <br/>
+                        <input type="text" id="cupon" name="cupon" placeholder="Ingresa tu código aquí"/>
+                        <button type="submit">Aplicar cupón</button>
+                    </section>
+
+                    <!-- Resumen del pedido -->
+                    <section>
+                        <h3>Resumen del pedido</h3>
+
+                        <table>
+                            <caption">Detalle de costos del carrito</caption>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Subtotal (3 artículos)
+                                    </th>
+                                    <td>$194.98</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Descuento aplicado</th>
+                                    <td>- $12.00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Costo de envío</th>
+                                    <td>Gratis</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <strong>Total a pagar</strong>
+                                    </th>
+                                    <td><strong>$182.98</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Método de envío -->
+                        <fieldset>
+                            <legend>Método de envío</legend>
+                            <label>
+                                <input type="radio" name="envio" value="estandar" checked /> Envío estándar (3-5 días
+                                hábiles) — Gratis
+                            </label>
+                            <label>
+                                <input type="radio" name="envio" value="express" /> Envío express (1-2 días hábiles) —
+                                $4.99
+                            </label>
+                            <label>
+                                <input type="radio" name="envio" value="mismo-dia" /> Envío mismo día (solo Santo
+                                Domingo) — $8.99
+                            </label>
+                        </fieldset>
+
+                        <!-- Opciones adicionales -->
+                        <fieldset>
+                            <legend>Opciones adicionales</legend>
+                            <label>
+                                <input type="checkbox" name="regalo" value="si" /> Envolver como regalo (+$2.00)
+                            </label>
+                            <label>
+                                <input type="checkbox" name="factura" value="si" /> Necesito factura con datos de
+                                empresa
+                            </label>
+                        </fieldset>
+                    </section>
+
+                    <!-- Botones de acción -->
+                    <section>
+                        <button type="submit">Proceder al pago →</button>
+                        <a href="../catalogo/catalogo.html">← Seguir comprando</a>
+                    </section>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</p>
+        <nav>
+            <ul>
+                <li><a href="../home.html">Inicio</a></li>
+                <li><a href="../catalogo/catalogo.html">Catálogo</a></li>
+                <li><a href="../login/login.html">Iniciar sesión</a></li>
+                <li><a href="../registro/registro.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
