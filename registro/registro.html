@@ -57,134 +57,92 @@
                 <!-- Tipo de cuenta -->
                 <fieldset>
                     <legend>Tipo de cuenta</legend>
-                    <label><input type="radio" name="tipo" value="comprador" checked />Comprador - Quiero comprar
-                        productos</label>
-                    <label><input type="radio" name="tipo" value="vendedor" />Vendedor - Quiero vender productos</label>
+                    <input type="radio" name="tipo" value="comprador" checked />
+                    <label>Comprador - Quiero comprar productos</label>
+                    <input type="radio" name="tipo" value="vendedor" />
+                    <label>Vendedor - Quiero vender productos</label>
                 </fieldset>
 
                 <!-- Datos personales -->
                 <fieldset>
-                    <legend">Datos personales</legend>
-
-                        <div>
-                            <div>
-                                <label for="nombre">Nombre <abbr title="campo obligatorio">*</abbr>
-                                </label>
-                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
-                                    autocomplete="given-name" required />
-                            </div>
-                            <div>
-                                <label for="apellido">Apellido <abbr title="campo obligatorio">*</abbr>
-                                </label>
-                                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido"
-                                    autocomplete="family-name" required />
-                            </div>
-                        </div>
-
-                        <!-- Fecha de nacimiento -->
-                        <div>
-                            <label for="fecha_nacimiento">Fecha de nacimiento <abbr title="campo obligatorio">*</abbr>
-                            </label>
-                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
-                        </div>
-
-                        <div>
-                            <div>
-                                <label for="genero">Género</label>
-                                <select id="genero" name="genero">
-                                    <option value="">-- Seleccionar --</option>
-                                    <option value="masculino">Masculino</option>
-                                    <option value="femenino">Femenino</option>
-                                    <option value="otro">Otro</option>
-                                    <option value="prefiero-no-decir">Prefiero no decir</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="pais">País <abbr title="campo obligatorio">*</abbr>
-                                </label>
-                                <select id="pais" name="pais" required>
-                                    <option value="">-- Seleccionar país --</option>
-                                    <option value="ec" selected>Ecuador</option>
-                                    <option value="co">Colombia</option>
-                                    <option value="pe">Perú</option>
-                                    <option value="mx">México</option>
-                                    <option value="ar">Argentina</option>
-                                    <option value="cl">Chile</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="+593 99 000 0000"
-                                autocomplete="tel" />
-                        </div>
+                    <legend>Datos personales</legend>
+                    <label for="nombre">Nombre <abbr title="campo obligatorio">*</abbr>
+                    </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name"
+                        required />
+                    <label for="apellido">Apellido <abbr title="campo obligatorio">*</abbr>
+                    </label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Tu apellido"
+                        autocomplete="family-name" required />
+                    <!-- Fecha de nacimiento -->
+                    <label for="fecha_nacimiento">Fecha de nacimiento <abbr title="campo obligatorio">*</abbr>
+                    </label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
+                    <label for="genero">Género</label>
+                    <select id="genero" name="genero">
+                        <option value="">-- Seleccionar --</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                        <option value="prefiero-no-decir">Prefiero no decir</option>
+                    </select>
+                    <label for="pais">País <abbr title="campo obligatorio">*</abbr>
+                    </label>
+                    <select id="pais" name="pais" required>
+                        <option value="">-- Seleccionar país --</option>
+                        <option value="ec" selected>Ecuador</option>
+                        <option value="co">Colombia</option>
+                        <option value="pe">Perú</option>
+                        <option value="mx">México</option>
+                        <option value="ar">Argentina</option>
+                        <option value="cl">Chile</option>
+                    </select>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+593 99 000 0000" autocomplete="tel" />
                 </fieldset>
 
                 <!-- Datos de acceso -->
                 <fieldset>
                     <legend>Datos de acceso</legend>
-
-                    <div>
-                        <label for="email">Correo electrónico <abbr title="campo obligatorio">*</abbr>
-                        </label>
-                        <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email"
-                            required />
-                    </div>
-
-                    <div>
-                        <label for="password">
-                            Contraseña <abbr title="campo obligatorio">*</abbr>
-                        </label>
-                        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres"
-                            autocomplete="new-password" minlength="8" required />
-                        <small>Usa letras, números y símbolos para mayor seguridad.</small>
-                    </div>
-
-                    <div>
-                        <label for="password2">Confirmar contraseña <abbr title="campo obligatorio">*</abbr>
-                        </label>
-                        <input type="password" id="password2" name="password2" placeholder="Repite tu contraseña"
-                            autocomplete="new-password" required />
-                    </div>
+                    <label for="email">Correo electrónico <abbr title="campo obligatorio">*</abbr>
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email"
+                        required />
+                    <label for="password">
+                        Contraseña <abbr title="campo obligatorio">*</abbr>
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres"
+                        autocomplete="new-password" minlength="8" required />
+                    <small>Usa letras, números y símbolos para mayor seguridad.</small><br>
+                    <label for="password2">Confirmar contraseña <abbr title="campo obligatorio">*</abbr>
+                    </label>
+                    <input type="password" id="password2" name="password2" placeholder="Repite tu contraseña"
+                        autocomplete="new-password" required />
                 </fieldset>
 
                 <!-- Preferencias y términos -->
                 <fieldset>
                     <legend>Preferencias y condiciones</legend>
-
-                    <div>
-                        <label>
-                            <input type="checkbox" name="newsletter" value="si" />
-                            Quiero recibir ofertas y novedades por correo electrónico.
-                        </label>
-                    </div>
-
-                    <div>
-                        <label>
-                            <input type="checkbox" name="notificaciones" value="si" />
-                            Activar notificaciones de mis pedidos.
-                        </label>
-                    </div>
-
-                    <div>
-                        <label>
-                            <input type="checkbox" name="terminos" value="acepto" required />He leído y acepto los
-                            <a href="#">Términos y condiciones</a>y la
-                            <a href="#">Política de privacidad</a>.
-                            <abbr title="campo obligatorio">*</abbr>
-                        </label>
-                    </div>
+                    <label>
+                        <input type="checkbox" name="newsletter" value="si" />
+                        Quiero recibir ofertas y novedades por correo electrónico.
+                    </label>
+                    <label>
+                        <input type="checkbox" name="notificaciones" value="si" />
+                        Activar notificaciones de mis pedidos.
+                    </label>
+                    <label>
+                        <input type="checkbox" name="terminos" value="acepto" required />He leído y acepto los
+                        <a href="#">Términos y condiciones</a> y la
+                        <a href="#">Política de privacidad</a>.
+                        <abbr title="campo obligatorio">*</abbr>
+                    </label>
                 </fieldset>
 
                 <!-- Botones -->
-                <div>
-                    <button type="submit Crear ">cuenta gratis</button>
-                    <button type="reset">Limpiar formulario</button>
-                </div>
-
+                <button type="submit Crear ">cuenta gratis</button>
+                <button type="reset">Limpiar formulario</button>
             </form>
-
             <p>¿Ya tienes una cuenta? <a href="../login/login.html">Inicia sesión aquí</a></p>
         </section>
     </main>

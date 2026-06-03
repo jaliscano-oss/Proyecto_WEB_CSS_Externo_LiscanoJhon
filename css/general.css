@@ -283,6 +283,7 @@ li {
     margin-bottom: 5px;
     color: #aaaaaa;
     line-height: 1.6;
+    list-style: none;
 }
 
 /* ============================================================
@@ -295,7 +296,7 @@ form {
 }
 
 label {
-    display: block;
+    display: inline-block;
     font-weight: bold;
     color: #1a3c6e;
     margin-bottom: 8px;
@@ -312,10 +313,6 @@ input {
     color: #333333;
     width: 100%;
     box-sizing: border-box;
-}
-
-input:hover {
-    border-color: #2358a8;
 }
 
 textarea {
@@ -377,12 +374,17 @@ fieldset {
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 25px;
+    display: block;
 }
 
 legend {
     font-weight: bold;
     color: #1a3c6e;
     padding: 0 10px;
+}
+
+abbr {
+    color: #bb0000;
 }
 
 /* ============================================================
