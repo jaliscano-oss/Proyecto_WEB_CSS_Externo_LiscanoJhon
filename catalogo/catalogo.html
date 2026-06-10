@@ -5,19 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catálogo - ShopEasy</title>
-    <link rel="icon" href="/img/icon/carrito-de-compras.png">
+    <link rel="icon" href="../img/icon/carrito-de-compras.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/catalogo.css">
 </head>
 
 <body>
 
     <!-- ENCABEZADO / NAVEGACIÓN -->
     <header>
-        <!-- Icono de carrito pequeño encima del formulario -->
-        <div class="logo-contenido">
+        <figure class="logo-contenido">
             <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
-        </div>
+        </figure>
         <h1>ShopEasy</h1>
         <p><em>Compra fácil, recibe rápido.</em></p>
         <nav>
@@ -32,69 +32,62 @@
     </header>
 
     <!-- Barra de búsqueda -->
-    <div class="barra-busqueda">
-        <form action="../catalogo/catalogo.html" method="get">
+    <section id="barra-busqueda">
+        <form class="formulario-busqueda" action="../catalogo/catalogo.html" method="get">
             <input type="search" name="q" placeholder="Buscar productos, marcas y más..." />
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
         </form>
-    </div>
+    </section>
 
-    <div class="catalogo-layout">
+    <!-- LAYOUT CATÁLOGO -->
+    <section id="catalogo-layout">
+
         <!-- Sidebar filtros -->
         <aside class="sidebar">
             <h2>Filtros</h2>
             <form action="../catalogo/catalogo.html" method="get">
 
-                <div class="filtro-grupo">
+                <section class="filtro-grupo">
                     <h3>Categoría</h3>
                     <label><input type="checkbox" name="cat" value="electronica" checked /> Electrónica</label>
-                    <label><input type="checkbox" name="cat" value="ropa" /> Ropa
-                        y Moda</label>
-                    <label><input type="checkbox" name="cat" value="hogar" />
-                        Hogar</label>
-                    <label><input type="checkbox" name="cat" value="deportes" />
-                        Deportes</label>
-                    <label><input type="checkbox" name="cat" value="libros" />
-                        Libros</label>
-                    <label><input type="checkbox" name="cat" value="juguetes" />
-                        Juguetes</label>
-                </div>
+                    <label><input type="checkbox" name="cat" value="ropa" /> Ropa y Moda</label>
+                    <label><input type="checkbox" name="cat" value="hogar" /> Hogar</label>
+                    <label><input type="checkbox" name="cat" value="deportes" /> Deportes</label>
+                    <label><input type="checkbox" name="cat" value="libros" /> Libros</label>
+                    <label><input type="checkbox" name="cat" value="juguetes" /> Juguetes</label>
+                </section>
 
-                <div class="filtro-grupo">
+                <section class="filtro-grupo">
                     <h3>Calificación</h3>
-                    <label><input type="radio" name="stars" value="5" /> ★★★★★ 5
-                        estrellas</label>
-                    <label><input type="radio" name="stars" value="4" checked />
-                        ★★★★☆ 4 o más</label>
-                    <label><input type="radio" name="stars" value="3" /> ★★★☆☆ 3
-                        o más</label>
-                </div>
+                    <label><input type="radio" name="stars" value="5" /> ★★★★★ 5 estrellas</label>
+                    <label><input type="radio" name="stars" value="4" checked /> ★★★★☆ 4 o más</label>
+                    <label><input type="radio" name="stars" value="3" /> ★★★☆☆ 3 o más</label>
+                </section>
 
-                <div class="filtro-grupo">
+                <section class="filtro-grupo">
                     <h3>Precio ($)</h3>
                     <label for="min">Mínimo</label>
                     <input type="number" id="min" name="min" placeholder="0" min="0" />
                     <label for="max">Máximo</label>
                     <input type="number" id="max" name="max" placeholder="1000" min="0" />
-                </div>
+                </section>
 
-                <div class="filtro-grupo">
+                <section class="filtro-grupo">
                     <h3>Disponibilidad</h3>
-                    <label><input type="checkbox" name="stock" value="disponible" checked />Solo en stock</label>
-                    <label>
-                        <input type="checkbox" name="envio" value="gratis" /> Envío gratis</label>
-                </div>
+                    <label><input type="checkbox" name="stock" value="disponible" checked /> Solo en stock</label>
+                    <label><input type="checkbox" name="envio" value="gratis" /> Envío gratis</label>
+                </section>
 
-                <div class="filtro-grupo" style="margin-bottom: 20px;">
-                    <h3 style="color: #34495e; margin-bottom: 10px;">Ordenar por</h3>
-                    <select name="orden" style="width: 100%; padding: 8px; border-radius: 5px;">
+                <section class="filtro-grupo">
+                    <h3>Ordenar por</h3>
+                    <select name="orden">
                         <option value="relevancia">Relevancia</option>
                         <option value="precio-asc">Precio: menor a mayor</option>
                         <option value="precio-desc">Precio: mayor a menor</option>
                         <option value="nuevo">Más nuevos</option>
                         <option value="mejor">Mejor calificados</option>
                     </select>
-                </div>
+                </section>
 
                 <button type="submit" class="btn-filtro">Aplicar filtros</button>
                 <button type="reset" class="btn-limpiar">Limpiar</button>
@@ -102,12 +95,10 @@
         </aside>
 
         <!-- Productos -->
-        <section class="catalogo-main">
-            <div class="catalogo-barra">
-                <p>Mostrando <strong>6 de 124</strong> productos en<strong>Electrónica</strong></p>
-            </div>
+        <section id="lista-productos">
+            <p class="resultado-busqueda">Mostrando <strong>6 de 124</strong> productos en <strong>Electrónica</strong></p>
 
-            <div class="tabla-wrap">
+            <section class="tabla-wrap">
                 <table>
                     <caption>Lista de productos disponibles en ShopEasy</caption>
                     <thead>
@@ -130,11 +121,10 @@
                             <td><s>$57.99</s></td>
                             <td>20%</td>
                             <td>★★★★☆ (128)</td>
-                            <td><span class="badge badge-verde">
-                            </td>
+                            <td><span class="badge badge-verde">Disponible</span></td>
                             <td>
-                                <a href="#producto.html?id=501" class="btn-ver">Ver</a>
-                                <a href="#carrito.html?agregar=501" class="btn-agregar">🛒 Agregar</a>
+                                <a href="#producto.html?id=501" class="btn-ver">Ver</a><br>
+                                <a href="#carrito.html?agregar=501" class="btn-agregar">Agregar</a>
                             </td>
                         </tr>
                         <tr>
@@ -144,11 +134,10 @@
                             <td>—</td>
                             <td>—</td>
                             <td>★★★★★ (64)</td>
-                            <td><span class="badge badge-verde">Disponible</span>
-                            </td>
+                            <td><span class="badge badge-verde">Disponible</span></td>
                             <td>
-                                <a href="#producto.html?id=502" class="btn-ver">Ver</a>
-                                <a href="#carrito.html?agregar=502" class="btn-agregar">🛒 Agregar</a>
+                                <a href="#producto.html?id=502" class="btn-ver">Ver</a><br>
+                                <a href="#carrito.html?agregar=502" class="btn-agregar">Agregar</a>
                             </td>
                         </tr>
                         <tr>
@@ -158,11 +147,10 @@
                             <td>—</td>
                             <td>—</td>
                             <td>★★★★☆ (41)</td>
-                            <td><span class="badge badge-verde">Disponible</span>
-                            </td>
+                            <td><span class="badge badge-verde">Disponible</span></td>
                             <td>
-                                <a href="#producto.html?id=503" class="btn-ver">Ver</a>
-                                <a href="#carrito.html?agregar=503" class="btn-agregar">🛒 Agregar</a>
+                                <a href="#producto.html?id=503" class="btn-ver">Ver</a><br>
+                                <a href="#carrito.html?agregar=503" class="btn-agregar">Agregar</a>
                             </td>
                         </tr>
                         <tr>
@@ -174,8 +162,8 @@
                             <td>★★★★☆ (89)</td>
                             <td><span class="badge badge-amarillo">Últimas 3</span></td>
                             <td>
-                                <a href="#producto.html?id=504" class="btn-ver">Ver</a>
-                                <a href="#carrito.html?agregar=504" class="btn-agregar">🛒 Agregar</a>
+                                <a href="#producto.html?id=504" class="btn-ver">Ver</a><br>
+                                <a href="#carrito.html?agregar=504" class="btn-agregar">Agregar</a>
                             </td>
                         </tr>
                         <tr>
@@ -185,11 +173,10 @@
                             <td><s>$899.99</s></td>
                             <td>28%</td>
                             <td>★★★★★ (210)</td>
-                            <td><span class="badge badge-verde">Disponible</span>
-                            </td>
+                            <td><span class="badge badge-verde">Disponible</span></td>
                             <td>
-                                <a href="#producto.html?id=505" class="btn-ver">Ver</a>
-                                <a href="#carrito.html?agregar=505" class="btn-agregar">🛒 Agregar</a>
+                                <a href="#producto.html?id=505" class="btn-ver">Ver</a><br>
+                                <a href="#carrito.html?agregar=505" class="btn-agregar">Agregar</a>
                             </td>
                         </tr>
                         <tr>
@@ -199,10 +186,9 @@
                             <td><s>$60.00</s></td>
                             <td>33%</td>
                             <td>★★★★☆ (45)</td>
-                            <td><span class="badge badge-rojo">Agotado</span>
-                            </td>
+                            <td><span class="badge badge-rojo">Agotado</span></td>
                             <td>
-                                <a href="#producto.html?id=506" class="btn-ver">Ver</a>
+                                <a href="#producto.html?id=506" class="btn-ver">Ver</a><br>
                             </td>
                         </tr>
                     </tbody>
@@ -210,7 +196,7 @@
                         <tr>
                             <td colspan="8">
                                 Página:
-                                <a href="#">1</a>
+                                <a href="#" class="enlace-activo">1</a>
                                 <a href="#">2</a>
                                 <a href="#">3</a>
                                 <a href="#">…</a>
@@ -219,10 +205,12 @@
                         </tr>
                     </tfoot>
                 </table>
-            </div>
+            </section>
         </section>
-    </div>
 
+    </section><!-- fin #catalogo-layout -->
+
+    <!-- PIE DE PÁGINA -->
     <footer>
         <p>&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</p>
         <hr>

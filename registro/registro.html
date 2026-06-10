@@ -5,78 +5,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro - ShopEasy</title>
-    <link rel="icon" href="/img/icon/carrito-de-compras.png">
+    <link rel="icon" href="../img/icon/carrito-de-compras.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/registro.css">
 </head>
 
 <body>
 
     <!-- ENCABEZADO CON LOGO -->
     <header>
-        <!-- Logo del carrito -->
-        <div>
+        <figure class="logo-contenido">
             <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
-            <div>
-                <h1>ShopEasy</h1>
-                <p><em>Compra fácil, recibe rápido.</em></p>
-            </div>
-        </div>
-        <!-- <nav aria-label="Navegación principal" style="margin-top: 15px;">
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="display: inline; margin: 0 15px;"><a href="../home.html"
-                        style="color: #2358a8; text-decoration: none; font-weight: bold;"><i
-                            class="fa-solid fa-house"></i> Inicio</a></li>
-                <li style="display: inline; margin: 0 15px;"><a href="../catalogo/catalogo.html"
-                        style="color: #2358a8; text-decoration: none; font-weight: bold;"><i
-                            class="fa-solid fa-box"></i> Catálogo</a></li>
-                <li style="display: inline; margin: 0 15px;"><a href="../login/login.html"
-                        style="color: #2358a8; text-decoration: none; font-weight: bold;"><i
-                            class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></li>
-                <li style="display: inline; margin: 0 15px;"><a href="../registro/registro.html"
-                        style="color: #f76b1c; text-decoration: none; font-weight: bold;"><i
-                            class="fa-solid fa-building-user"></i> Registrarse</a></li>
-            </ul>
-        </nav> -->
+        </figure>
+        <h1>ShopEasy</h1>
+        <p><em>Compra fácil, recibe rápido.</em></p>
     </header>
 
     <!-- CONTENIDO PRINCIPAL -->
     <main>
-        <section>
+        <section id="registro-principal">
 
-            <!-- Logo pequeño encima del título -->
-            <div>
+            <figure class="logo-formulario">
                 <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
-            </div>
+            </figure>
 
             <h2>Crear cuenta nueva</h2>
             <p>Completa el formulario para unirte a ShopEasy.</p>
 
-            <form action="../login/login.html" method="get" novalidate>
+            <form class="formulario-registro" action="../login/login.html" method="get" novalidate>
 
                 <!-- Tipo de cuenta -->
                 <fieldset>
                     <legend>Tipo de cuenta</legend>
-                    <input type="radio" name="tipo" value="comprador" checked />
-                    <label>Comprador - Quiero comprar productos</label>
-                    <input type="radio" name="tipo" value="vendedor" />
-                    <label>Vendedor - Quiero vender productos</label>
+                    <label><input type="radio" name="tipo" value="comprador" checked /> Comprador - Quiero comprar productos</label>
+                    <label><input type="radio" name="tipo" value="vendedor" /> Vendedor - Quiero vender productos</label>
                 </fieldset>
 
                 <!-- Datos personales -->
                 <fieldset>
                     <legend>Datos personales</legend>
-                    <label for="nombre">Nombre <abbr title="campo obligatorio">*</abbr>
-                    </label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name"
-                        required />
-                    <label for="apellido">Apellido <abbr title="campo obligatorio">*</abbr>
-                    </label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Tu apellido"
-                        autocomplete="family-name" required />
-                    <!-- Fecha de nacimiento -->
-                    <label for="fecha_nacimiento">Fecha de nacimiento <abbr title="campo obligatorio">*</abbr>
-                    </label>
+                    <label for="nombre">Nombre <abbr title="campo obligatorio">*</abbr></label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name" required />
+                    <label for="apellido">Apellido <abbr title="campo obligatorio">*</abbr></label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" autocomplete="family-name" required />
+                    <label for="fecha_nacimiento">Fecha de nacimiento <abbr title="campo obligatorio">*</abbr></label>
                     <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
                     <label for="genero">Género</label>
                     <select id="genero" name="genero">
@@ -86,8 +59,7 @@
                         <option value="otro">Otro</option>
                         <option value="prefiero-no-decir">Prefiero no decir</option>
                     </select>
-                    <label for="pais">País <abbr title="campo obligatorio">*</abbr>
-                    </label>
+                    <label for="pais">País <abbr title="campo obligatorio">*</abbr></label>
                     <select id="pais" name="pais" required>
                         <option value="">-- Seleccionar país --</option>
                         <option value="ec" selected>Ecuador</option>
@@ -104,46 +76,35 @@
                 <!-- Datos de acceso -->
                 <fieldset>
                     <legend>Datos de acceso</legend>
-                    <label for="email">Correo electrónico <abbr title="campo obligatorio">*</abbr>
-                    </label>
-                    <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email"
-                        required />
-                    <label for="password">
-                        Contraseña <abbr title="campo obligatorio">*</abbr>
-                    </label>
-                    <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres"
-                        autocomplete="new-password" minlength="8" required />
-                    <small>Usa letras, números y símbolos para mayor seguridad.</small><br>
-                    <label for="password2">Confirmar contraseña <abbr title="campo obligatorio">*</abbr>
-                    </label>
-                    <input type="password" id="password2" name="password2" placeholder="Repite tu contraseña"
-                        autocomplete="new-password" required />
+                    <label for="email">Correo electrónico <abbr title="campo obligatorio">*</abbr></label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required />
+                    <label for="password">Contraseña <abbr title="campo obligatorio">*</abbr></label>
+                    <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" minlength="8" required />
+                    <p class="nota">Usa letras, números y símbolos para mayor seguridad.</p>
+                    <label for="password2">Confirmar contraseña <abbr title="campo obligatorio">*</abbr></label>
+                    <input type="password" id="password2" name="password2" placeholder="Repite tu contraseña" autocomplete="new-password" required />
                 </fieldset>
 
                 <!-- Preferencias y términos -->
                 <fieldset>
                     <legend>Preferencias y condiciones</legend>
+                    <label><input type="checkbox" name="newsletter" value="si" /> Quiero recibir ofertas y novedades por correo electrónico.</label>
+                    <label><input type="checkbox" name="notificaciones" value="si" /> Activar notificaciones de mis pedidos.</label>
                     <label>
-                        <input type="checkbox" name="newsletter" value="si" />
-                        Quiero recibir ofertas y novedades por correo electrónico.
-                    </label>
-                    <label>
-                        <input type="checkbox" name="notificaciones" value="si" />
-                        Activar notificaciones de mis pedidos.
-                    </label>
-                    <label>
-                        <input type="checkbox" name="terminos" value="acepto" required />He leído y acepto los
-                        <a href="#">Términos y condiciones</a> y la
-                        <a href="#">Política de privacidad</a>.
+                        <input type="checkbox" name="terminos" value="acepto" required />
+                        He leído y acepto los <a href="#">Términos y condiciones</a> y la <a href="#">Política de privacidad</a>.
                         <abbr title="campo obligatorio">*</abbr>
                     </label>
                 </fieldset>
 
                 <!-- Botones -->
-                <button type="submit Crear ">cuenta gratis</button>
-                <button type="reset">Limpiar formulario</button>
+                <section class="botones-form">
+                    <button type="submit" class="btn-enviar">Crear cuenta gratis</button>
+                    <button type="reset">Limpiar formulario</button>
+                </section>
             </form>
-            <p>¿Ya tienes una cuenta? <a href="../login/login.html">Inicia sesión aquí</a></p>
+
+            <p class="nota">¿Ya tienes una cuenta? <a href="../login/login.html">Inicia sesión aquí</a></p>
         </section>
     </main>
 
@@ -158,6 +119,7 @@
             </ul>
         </nav>
     </footer>
+
 </body>
 
 </html>

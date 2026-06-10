@@ -1,0 +1,266 @@
+/* ============================================================
+   BLOQUE 1: BARRA DE BÚSQUEDA DEL CATÁLOGO
+   Estilo del formulario de búsqueda superior.
+   ============================================================ */
+
+#barra-busqueda {
+    background-color: #1a3c6e;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+#barra-busqueda .formulario-busqueda {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#barra-busqueda input[type="search"] {
+    width: 420px;
+    max-width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+#barra-busqueda button {
+    background-color: #f76b1c;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+
+#barra-busqueda button:hover {
+    background-color: #d4590e;
+}
+
+/* ============================================================
+   BLOQUE 2: LAYOUT DE DOS COLUMNAS (SIDEBAR + TABLA)
+   Estructura flex para mostrar filtros y productos lado a lado.
+   ============================================================ */
+
+#catalogo-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* ============================================================
+   BLOQUE 3: SIDEBAR DE FILTROS
+   Estilos del panel lateral de filtros.
+   ============================================================ */
+
+.sidebar {
+    width: 240px;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 1.1em;
+    border-bottom: 2px solid #f76b1c;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.filtro-grupo {
+    margin-bottom: 18px;
+}
+
+.filtro-grupo h3 {
+    font-size: 0.95em;
+    color: #1a3c6e;
+    margin-bottom: 8px;
+}
+
+.filtro-grupo label {
+    display: block;
+    color: #333333;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.filtro-grupo label:hover {
+    color: #2358a8;
+}
+
+.btn-filtro {
+    background-color: #2358a8;
+    color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.btn-filtro:hover {
+    background-color: #1a3c6e;
+}
+
+.btn-limpiar {
+    background-color: #f5f5f5;
+    color: #333333;
+    border: 1px solid #dddddd;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.btn-limpiar:hover {
+    background-color: #eeeeee;
+}
+
+/* ============================================================
+   BLOQUE 4: TABLA DE PRODUCTOS
+   Estilos de la tabla principal del catálogo.
+   ============================================================ */
+
+#lista-productos {
+    flex: 1;
+}
+
+p.resultado-busqueda {
+    margin-bottom: 12px;
+    color: #666666;
+    font-size: 0.9em;
+}
+
+.tabla-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background-color: #1a3c6e;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #dddddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fb;
+}
+
+tr:hover {
+    background-color: #eef4ff;
+}
+
+tbody td:first-child a {
+    color: #1a3c6e;
+    font-weight: bold;
+}
+
+tbody td:first-child a:hover {
+    color: #f76b1c;
+}
+
+/* ============================================================
+   BLOQUE 5: BADGES DE ESTADO (STOCK)
+   Indicadores visuales de disponibilidad de productos.
+   ============================================================ */
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.badge-verde {
+    background-color: #d4edda;
+    color: #1a6b35;
+}
+
+.badge-rojo {
+    background-color: #f8d7da;
+    color: #c0392b;
+}
+
+.badge-amarillo {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* ============================================================
+   BLOQUE 6: BOTONES DE ACCIÓN EN TABLA
+   Estilos de los enlaces "Ver" y "Agregar" en cada fila.
+   ============================================================ */
+
+.btn-ver {
+    background-color: #2358a8;
+    color: white !important;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-ver:hover {
+    background-color: #1a3c6e;
+}
+
+.btn-agregar {
+    background-color: #f76b1c;
+    color: white !important;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-agregar:hover {
+    background-color: #d4590e;
+}
+
+/* ============================================================
+   BLOQUE 7: PAGINACIÓN / ENLACE ACTIVO
+   Resalta la página activa en la paginación del catálogo.
+   ============================================================ */
+
+.enlace-activo {
+    background-color: #2358a8;
+    color: #ffffff !important;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.enlace-activo:hover {
+    background-color: #1a3c6e;
+    text-decoration: none !important;
+}
+
+@media (max-width: 768px) {
+
+    #catalogo-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .btn-ver,
+    .btn-agregar {
+        display: block;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}

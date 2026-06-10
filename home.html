@@ -5,28 +5,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShopEasy - Página de Inicio</title>
-  <link rel="icon" href="/img/icon/carrito-de-compras.png">
+  <link rel="icon" href="img/icon/carrito-de-compras.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
 
   <!-- ENCABEZADO / NAVEGACIÓN -->
   <header>
-    <!-- Icono de carrito pequeño encima del formulario -->
-    <div class="logo-contenido">
-      <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
-    </div>
+    <figure class="logo-contenido">
+      <img src="img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
+    </figure>
     <h1>ShopEasy</h1>
     <p><em>Compra fácil, recibe rápido.</em></p>
     <nav>
       <ul>
-        <li><a href="#"><i class="fa-solid fa-house"></i>Inicio</a></li>
-        <li><a href="../catalogo/catalogo.html"><i class="fa-solid fa-box"></i> Catálogo</a></li>
-        <li><a href="../carrito/carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-        <li><a href="../login/login.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></li>
-        <li><a href="../registro/registro.html"><i class="fa-solid fa-building-user"></i> Registrarse</a></li>
+        <li><a href="#"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a href="catalogo/catalogo.html"><i class="fa-solid fa-box"></i> Catálogo</a></li>
+        <li><a href="carrito/carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        <li><a href="login/login.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></li>
+        <li><a href="registro/registro.html"><i class="fa-solid fa-building-user"></i> Registrarse</a></li>
       </ul>
     </nav>
   </header>
@@ -35,86 +35,85 @@
   <main>
 
     <!-- SECCIÓN HERO / BIENVENIDA -->
-    <section class="hero">
+    <section id="presentacion">
       <h2>Bienvenido a ShopEasy</h2>
-      <p>Encuentra los mejores productos al mejor precio. Compra desde cualquier lugar y recíbelos en la puerta de tu
-        casa.</p>
-      <button><a href="../catalogo/catalogo.html">Ver catálogo</a></button>
+      <p>Encuentra los mejores productos al mejor precio. Compra desde cualquier lugar y recíbelos en la puerta de tu casa.</p>
+      <button><a href="catalogo/catalogo.html">Ver catálogo</a></button>
       &nbsp;
-      <button><a href="../registro/registro.html">Crear cuenta gratis</a></button>
+      <button><a href="registro/registro.html">Crear cuenta gratis</a></button>
     </section>
 
     <!-- SECCIÓN CATEGORÍAS -->
-    <section class="categorias">
+    <section id="categorias">
       <h2>Categorías destacadas</h2>
 
-      <div>
-        <article>
+      <section class="grupo-tarjetas">
+        <article class="tarjeta">
           <h3>Electrónica</h3>
           <p>Auriculares, cargadores, accesorios para laptop y más.</p>
-          <button><a href="../catalogo/catalogo.html">Ver productos</a></button>
+          <button><a href="catalogo/catalogo.html">Ver productos</a></button>
         </article>
 
-        <article>
+        <article class="tarjeta">
           <h3>Ropa y Moda</h3>
           <p>Camisetas, zapatos, accesorios para toda la familia.</p>
-          <button><a href="../catalogo/catalogo.html">Ver productos</a></button>
+          <button><a href="catalogo/catalogo.html">Ver productos</a></button>
         </article>
 
-        <article>
+        <article class="tarjeta">
           <h3>Hogar</h3>
           <p>Todo lo que necesitas para decorar y organizar tu hogar.</p>
-          <button><a href="../catalogo/catalogo.html">Ver productos</a></button>
+          <button><a href="catalogo/catalogo.html">Ver productos</a></button>
         </article>
 
-        <article>
+        <article class="tarjeta">
           <h3>Deportes</h3>
           <p>Equipamiento deportivo para tus actividades favoritas.</p>
-          <button><a href="../catalogo/catalogo.html">Ver productos</a></button>
+          <button><a href="catalogo/catalogo.html">Ver productos</a></button>
         </article>
-      </div>
+      </section>
       <hr>
     </section>
 
     <!-- SECCIÓN PRODUCTOS DESTACADOS -->
-    <section class="productos-destacados">
+    <section id="productos-destacados">
       <h2>Productos destacados</h2>
 
-      <div>
-        <article>
+      <section class="grupo-tarjetas">
+        <article class="tarjeta">
           <h3>Auriculares Bluetooth</h3>
           <p>Categoría: Electrónica</p>
           <p>Precio: <strong>$45.99</strong></p>
-          <p>Stock disponible: 12 unidades</p>
+          <p class="nota">Stock disponible: 12 unidades</p>
           <button><a href="#">Ver detalle</a></button><br><br>
           <button><a href="#carrito.html?agregar=501">Agregar al carrito</a></button>
         </article>
 
-        <article>
+        <article class="tarjeta">
           <h3>Funda para laptop 15"</h3>
           <p>Categoría: Accesorios</p>
           <p>Precio: <strong>$18.50</strong></p>
-          <p>Stock disponible: 30 unidades</p>
+          <p class="nota">Stock disponible: 30 unidades</p>
           <button><a href="#">Ver detalle</a></button><br><br>
           <button><a href="#carrito.html?agregar=501">Agregar al carrito</a></button>
         </article>
 
-        <article>
+        <article class="tarjeta">
           <h3>Camiseta deportiva</h3>
           <p>Categoría: Ropa</p>
           <p>Precio: <strong>$12.00</strong></p>
-          <p>Stock disponible: 50 unidades</p>
+          <p class="nota">Stock disponible: 50 unidades</p>
           <button><a href="#">Ver detalle</a></button><br><br>
           <button><a href="#carrito.html?agregar=501">Agregar al carrito</a></button>
         </article>
-      </div>
+      </section>
       <hr />
     </section>
 
     <!-- SECCIÓN BÚSQUEDA -->
-    <section class="busqueda-home">
+    <section id="busqueda">
       <h2>Buscar productos</h2>
-      <form action="../catalogo/catalogo.html" method="get">
+      <form class="formulario-busqueda" action="catalogo/catalogo.html" method="get">
         <label for="busqueda">¿Qué estás buscando?</label>
         <input type="search" id="busqueda" name="q" placeholder="Ej: auriculares, camiseta, silla..." />
         <button type="submit">Buscar</button>
@@ -123,40 +122,37 @@
     </section>
 
     <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
-    <section class="seccion-elegirnos-home">
+    <section id="elegirnos">
       <h2>¿Por qué elegir ShopEasy?</h2>
 
-      <div>
-        <article>
+      <section class="grupo-tarjetas">
+        <article class="tarjeta">
           <h3>Envío rápido</h3>
-          <p>Recibe tus pedidos en 24 a 48 horas en Santo Domingo y ciudades cercanas.
-          </p>
+          <p>Recibe tus pedidos en 24 a 48 horas en Santo Domingo y ciudades cercanas.</p>
         </article>
 
-        <article>
+        <article class="tarjeta">
           <h3>Pagos seguros</h3>
           <p>Aceptamos tarjeta de crédito, débito y pago contra entrega.</p>
         </article>
 
-        <article>
+        <article class="tarjeta">
           <h3>Garantía de devolución</h3>
-          <p>Si no estás satisfecho, tienes 7 días para devolver tu compra sin costo.
-          </p>
+          <p>Si no estás satisfecho, tienes 7 días para devolver tu compra sin costo.</p>
         </article>
 
-        <article>
+        <article class="tarjeta">
           <h3>Atención al cliente</h3>
           <p>Estamos disponibles de lunes a sábado de 8:00 a 18:00.</p>
         </article>
-      </div>
+      </section>
       <hr />
     </section>
 
     <!-- SECCIÓN INFORMACIÓN -->
-    <section>
+    <section id="objetivo">
       <details>
         <summary>¿Cuál es el objetivo de ShopEasy?</summary>
-
         <p>
           El presente proyecto tiene como objetivo facilitar las compras online
           de forma rápida, segura y accesible para todos los usuarios.
@@ -165,18 +161,18 @@
     </section>
 
     <!-- SECCIÓN OFERTA ESPECIAL -->
-    <section class="seccion-oferta-home">
+    <section id="oferta">
       <h2>Oferta del día</h2>
       <p>¡Hoy solamente! 20% de descuento en toda la categoría de Electrónica.</p>
       <p>Usa el código: <strong>SHOP20</strong></p>
-      <button><a href="../catalogo/catalogo.html?categoria=electronica">Aprovechar oferta</a></button>
+      <button><a href="catalogo/catalogo.html?categoria=electronica">Aprovechar oferta</a></button>
     </section>
 
   </main>
 
   <!-- PIE DE PÁGINA -->
   <footer>
-    <section class="footer-home">
+    <section class="footer-info">
       <h3>ShopEasy</h3>
       <p>Tu tienda online de confianza en Santo Domingo, Ecuador.</p>
     </section>
@@ -185,30 +181,23 @@
       <h4>Páginas</h4>
       <ul>
         <li><a href="#">Inicio</a></li>
-        <li><a href="../catalogo/catalogo.html">Catálogo</a></li>
-        <li><a href="../carrito/carrito.html">Carrito</a></li>
-        <li><a href="../login/login.html">Iniciar sesión</a></li>
-        <li><a href="../registro/registro.html">Registrarse</a></li>
+        <li><a href="catalogo/catalogo.html">Catálogo</a></li>
+        <li><a href="carrito/carrito.html">Carrito</a></li>
+        <li><a href="login/login.html">Iniciar sesión</a></li>
+        <li><a href="registro/registro.html">Registrarse</a></li>
       </ul>
     </nav>
 
-    <section>
+    <address>
       <h4>Contacto</h4>
-      <address>
-        <p>Email: <a href="mailto:contacto@shopeasy.ec">contacto@shopeasy.ec</a></p>
-        <p>Teléfono: <a href="tel:+593991234567">+593 99 123 4567</a></p>
-        <p>Santo Domingo de los Tsáchilas, Ecuador</p>
-      </address>
-    </section>
+      <p>Email: <a href="mailto:contacto@shopeasy.ec">contacto@shopeasy.ec</a></p>
+      <p>Teléfono: <a href="tel:+593991234567">+593 99 123 4567</a></p>
+      <p>Santo Domingo de los Tsáchilas, Ecuador</p>
+      <p><strong>Dirección:</strong> Av. General Rumiñahui s/n, Sangolquí, Ecuador</p>
+      <p><a href="https://maps.app.goo.gl/a683TKhX5CdoCRYu8" target="_blank">Ver ubicación en Google Maps</a></p>
+    </address>
 
-    <small>
-      <p>
-        &copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;
-      </p>
-    </small>
-    <br>
-    <li><strong>Dirección:</strong> Av. General Rumiñahui s/n, Sangolquí, Ecuador</li>
-    <a href="https://maps.app.goo.gl/a683TKhX5CdoCRYu8" target="_blank"> Ver ubicación en Google Maps</a>
+    <small>&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</small>
   </footer>
 
 </body>

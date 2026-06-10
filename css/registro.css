@@ -1,0 +1,114 @@
+/* ============================================================
+   BLOQUE 1: CONTENEDOR PRINCIPAL DEL REGISTRO
+   Enmarca el formulario de creación de cuenta.
+   ============================================================ */
+
+#registro-principal {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 16px rgba(35, 88, 168, 0.12);
+    text-align: left;
+}
+
+#registro-principal > h2 {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+#registro-principal > p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   BLOQUE 2: LOGO SOBRE EL FORMULARIO
+   Imagen del logo pequeño centrada sobre el título.
+   ============================================================ */
+
+.logo-formulario {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo-formulario img {
+    width: 70px;
+    height: 70px;
+}
+
+/* ============================================================
+   BLOQUE 3: FORMULARIO DE REGISTRO
+   Organización de campos y espaciado entre elementos.
+   ============================================================ */
+
+.formulario-registro {
+    width: 100%;
+}
+
+.formulario-registro label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+.formulario-registro input[type="text"],
+.formulario-registro input[type="email"],
+.formulario-registro input[type="password"],
+.formulario-registro input[type="tel"],
+.formulario-registro input[type="date"],
+.formulario-registro select {
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+.formulario-registro input:focus,
+.formulario-registro select:focus {
+    outline: 2px solid #2358a8;
+    border-color: #2358a8;
+}
+
+.formulario-registro fieldset {
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   BLOQUE 4: NOTA INFORMATIVA
+   Estilo del párrafo de ayuda dentro del formulario.
+   ============================================================ */
+
+p.nota {
+    font-size: 0.85em;
+    color: #856404;
+    background-color: #fff3cd;
+    border-radius: 5px;
+    padding: 6px 12px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ============================================================
+   BLOQUE 5: BOTONES DEL FORMULARIO
+   Estilos de los botones "Crear cuenta" y "Limpiar".
+   ============================================================ */
+
+.botones-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.btn-enviar {
+    background-color: #f76b1c;
+    color: #ffffff;
+    flex: 1;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 8px;
+}
+
+.btn-enviar:hover {
+    background-color: #d4590e;
+}

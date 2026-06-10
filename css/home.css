@@ -1,0 +1,228 @@
+/* ============================================================
+   BLOQUE 1: SECCIÓN PRESENTACIÓN (HERO)
+   Estilos propios de la sección de bienvenida principal.
+   ============================================================ */
+
+#presentacion {
+    background: linear-gradient(135deg, #1a3c6e 0%, #2358a8 100%);
+    color: #ffffff;
+    padding: 60px 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+#presentacion h2 {
+    color: #ffffff;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+#presentacion p {
+    color: #d0dff5;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+#presentacion button {
+    background-color: #f76b1c;
+    color: #ffffff;
+    padding: 12px 28px;
+    font-size: 1em;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+#presentacion button:hover {
+    background-color: #d4590e;
+}
+
+/* ============================================================
+   BLOQUE 2: TARJETAS REUTILIZABLES
+   Estilos para la clase .tarjeta usada en múltiples secciones.
+   ============================================================ */
+
+.grupo-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.tarjeta {
+    width: 220px;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(35, 88, 168, 0.15);
+}
+
+.tarjeta h3 {
+    color: #1a3c6e;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.tarjeta p {
+    color: #666666;
+    font-size: 0.9em;
+    margin-bottom: 12px;
+}
+
+/* ============================================================
+   BLOQUE 3: NOTA DE STOCK
+   Estilo para párrafos con clase .nota (stock, avisos).
+   ============================================================ */
+
+p.nota {
+    font-size: 0.85em;
+    color: #1a6b35;
+    background-color: #d4edda;
+    border-radius: 5px;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* ============================================================
+   BLOQUE 4: SECCIÓN BÚSQUEDA
+   Estilos del formulario de búsqueda en la página de inicio.
+   ============================================================ */
+
+#busqueda {
+    background-color: #f0f4ff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#busqueda h2 {
+    margin-bottom: 15px;
+}
+
+.formulario-busqueda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.formulario-busqueda input[type="search"] {
+    width: 380px;
+    max-width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+}
+
+.formulario-busqueda button {
+    padding: 12px 24px;
+    background-color: #f76b1c;
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.formulario-busqueda button:hover {
+    background-color: #d4590e;
+}
+
+/* ============================================================
+   BLOQUE 5: SECCIÓN ¿POR QUÉ ELEGIRNOS?
+   Estilos específicos para la sección de ventajas.
+   ============================================================ */
+
+#elegirnos {
+    background-color: #f3f0ff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#elegirnos h2 {
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   BLOQUE 6: SECCIÓN OBJETIVO (DETAILS/SUMMARY)
+   Estilos para la sección con el elemento details.
+   ============================================================ */
+
+#objetivo {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+#objetivo details {
+    background-color: #ffffff;
+    border-left: 6px solid #2358a8;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #dddddd;
+}
+
+#objetivo summary {
+    font-weight: bold;
+    color: #1a3c6e;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#objetivo details p {
+    margin-top: 10px;
+    color: #666666;
+}
+
+/* ============================================================
+   BLOQUE 7: OFERTA DEL DÍA
+   Estilos del banner de oferta especial.
+   ============================================================ */
+
+#oferta {
+    background-color: #fff3cd;
+    border: 2px solid #f76b1c;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+#oferta h2 {
+    color: #856404;
+}
+
+#oferta p {
+    color: #856404;
+}
+
+#oferta button {
+    background-color: #f76b1c;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+#oferta button:hover {
+    background-color: #d4590e;
+}
+
+/* ============================================================
+   BLOQUE 8: LOGO EN HEADER
+   Estilo de la figura del logo en el encabezado.
+   ============================================================ */
+
+.logo-contenido {
+    margin-bottom: 8px;
+}
+
+.logo-contenido img {
+    width: 60px;
+    height: 60px;
+}
