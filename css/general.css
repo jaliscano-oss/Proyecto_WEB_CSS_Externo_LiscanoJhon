@@ -140,6 +140,20 @@ footer {
     padding: 30px 20px;
     margin-top: 20px;
     text-align: center;
+    /* Distribución Flexbox en el footer */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+footer small {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #aaaaaa;
 }
 
 /* ============================================================
@@ -151,11 +165,16 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    /* Flexbox en el menú de navegación */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 nav li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav a {
@@ -183,25 +202,8 @@ footer nav a:hover {
 
 /* ============================================================
    BLOQUE 5: CONTENIDO Y SECCIONES
-   Estilos para main, section, article y aside.
+   Estilos para main, aside.
    ============================================================ */
-
-section article {
-    width: 220px;
-    display: inline-block;
-    vertical-align: top;
-    margin: 10px;
-}
-
-section article h3 {
-    color: #2358a8;
-    margin-bottom: 10px;
-}
-
-section article p {
-    color: #666666;
-    margin-bottom: 15px;
-}
 
 aside h2 {
     color: #1a3c6e;
@@ -220,11 +222,10 @@ aside h3 {
    ============================================================ */
 
 img {
-    width: 50px;
     max-width: 100%;
-    height: 50px;
+    height: auto;
     border-radius: 5px;
-    display: flexbox;
+    display: block;
 }
 
 figure {
