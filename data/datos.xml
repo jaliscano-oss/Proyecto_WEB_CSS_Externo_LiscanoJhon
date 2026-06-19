@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+    <producto>
+        <id>501</id>
+        <nombre>Auriculares Bluetooth Pro</nombre>
+        <categoria>Electrónica</categoria>
+        <descripcion>Auriculares inalámbricos con cancelación de ruido, 30 horas de batería y estuche de carga incluido.</descripcion>
+        <precio>45.99</precio>
+        <precioAnterior>57.99</precioAnterior>
+        <descuento>20</descuento>
+        <calificacion>4</calificacion>
+        <resenas>128</resenas>
+        <stock>disponible</stock>
+        <imagen>img/productos/auriculares-bluetooth-pro.jpg</imagen>
+    </producto>
+
+    <producto>
+        <id>502</id>
+        <nombre>Zapatillas Running Lite</nombre>
+        <categoria>Deportes</categoria>
+        <descripcion>Zapatillas ligeras para correr, con suela amortiguada y malla transpirable.</descripcion>
+        <precio>89.00</precio>
+        <precioAnterior></precioAnterior>
+        <descuento>0</descuento>
+        <calificacion>5</calificacion>
+        <resenas>64</resenas>
+        <stock>disponible</stock>
+        <imagen>img/productos/zapatillas-running-lite.jpg</imagen>
+    </producto>
+
+    <producto>
+        <id>503</id>
+        <nombre>Mochila Urban Slim 20L</nombre>
+        <categoria>Accesorios</categoria>
+        <descripcion>Mochila urbana de 20 litros con compartimento acolchado para laptop de hasta 15 pulgadas.</descripcion>
+        <precio>34.50</precio>
+        <precioAnterior></precioAnterior>
+        <descuento>0</descuento>
+        <calificacion>4</calificacion>
+        <resenas>41</resenas>
+        <stock>disponible</stock>
+        <imagen>img/productos/mochila-urban-slim.jpg</imagen>
+    </producto>
+
+    <producto>
+        <id>504</id>
+        <nombre>Smartwatch FitPro X2</nombre>
+        <categoria>Electrónica</categoria>
+        <descripcion>Reloj inteligente con monitor de ritmo cardíaco, GPS integrado y resistencia al agua.</descripcion>
+        <precio>79.99</precio>
+        <precioAnterior>122.99</precioAnterior>
+        <descuento>35</descuento>
+        <calificacion>4</calificacion>
+        <resenas>89</resenas>
+        <stock>ultimas_unidades</stock>
+        <imagen>img/productos/smartwatch-fitpro-x2.jpg</imagen>
+    </producto>
+
+    <producto>
+        <id>505</id>
+        <nombre>Laptop UltraBook 15"</nombre>
+        <categoria>Electrónica</categoria>
+        <descripcion>Laptop ultradelgada de 15 pulgadas, ideal para trabajo y estudio, con SSD de alto rendimiento.</descripcion>
+        <precio>649.99</precio>
+        <precioAnterior>899.99</precioAnterior>
+        <descuento>28</descuento>
+        <calificacion>5</calificacion>
+        <resenas>210</resenas>
+        <stock>disponible</stock>
+        <imagen>img/productos/laptop-ultrabook-15.jpg</imagen>
+    </producto>
+
+    <producto>
+        <id>506</id>
+        <nombre>Control Gaming Inalámbrico</nombre>
+        <categoria>Electrónica</categoria>
+        <descripcion>Control inalámbrico compatible con PC y consola, con vibración dual y batería recargable.</descripcion>
+        <precio>39.99</precio>
+        <precioAnterior>60.00</precioAnterior>
+        <descuento>33</descuento>
+        <calificacion>4</calificacion>
+        <resenas>45</resenas>
+        <stock>agotado</stock>
+        <imagen>img/productos/control-gaming-inalambrico.jpg</imagen>
+    </producto>
+</productos>

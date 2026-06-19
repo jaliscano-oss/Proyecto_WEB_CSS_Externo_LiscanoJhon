@@ -7,6 +7,7 @@
   <title>ShopEasy - Página de Inicio</title>
   <link rel="icon" href="img/icon/carrito-de-compras.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
@@ -15,19 +16,53 @@
 
   <!-- ENCABEZADO / NAVEGACIÓN -->
   <header>
-    <figure class="logo-contenido">
-      <img src="img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
-    </figure>
-    <h1>ShopEasy</h1>
-    <p><em>Compra fácil, recibe rápido.</em></p>
-    <nav>
-      <ul>
-        <li><a href="#"><i class="fa-solid fa-house"></i> Inicio</a></li>
-        <li><a href="catalogo/catalogo.html"><i class="fa-solid fa-box"></i> Catálogo</a></li>
-        <li><a href="carrito/carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-        <li><a href="login/login.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a></li>
-        <li><a href="registro/registro.html"><i class="fa-solid fa-building-user"></i> Registrarse</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-shopeasy">
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="home.html">
+          <img src="img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
+          <span>
+            ShopEasy
+            <small>Compra fácil, recibe rápido.</small>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarShopEasy"
+          aria-controls="navbarShopEasy" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarShopEasy">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">
+                <i class="fa-solid fa-house"></i> Inicio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalogo/catalogo.html">
+                <i class="fa-solid fa-box"></i> Catálogo
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carrito/carrito.html">
+                <i class="fa-solid fa-cart-shopping"></i> Carrito
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login/login.html">
+                <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registro/registro.html">
+                <i class="fa-solid fa-building-user"></i> Registrarse
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </nav>
   </header>
 
@@ -37,7 +72,8 @@
     <!-- SECCIÓN HERO / BIENVENIDA -->
     <section id="presentacion">
       <h2>Bienvenido a ShopEasy</h2>
-      <p>Encuentra los mejores productos al mejor precio. Compra desde cualquier lugar y recíbelos en la puerta de tu casa.</p>
+      <p>Encuentra los mejores productos al mejor precio. Compra desde cualquier lugar y recíbelos en la puerta de tu
+        casa.</p>
       <button><a href="catalogo/catalogo.html">Ver catálogo</a></button>
       &nbsp;
       <button><a href="registro/registro.html">Crear cuenta gratis</a></button>
@@ -75,6 +111,48 @@
       <hr>
     </section>
 
+    <!-- CARRUSEL DE OFERTAS / PRODUCTOS DESTACADOS (Bootstrap) -->
+    <section id="carrusel-ofertas">
+      <h2>Destacados de la semana</h2>
+      <div id="carruselShopEasy" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carruselShopEasy" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carruselShopEasy" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carruselShopEasy" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carrusel-slide-contenido">
+              <h3>20% OFF en Electrónica</h3>
+              <p>Usa el código SHOP20 en tu próxima compra.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carrusel-slide-contenido">
+              <h3>Envío gratis desde $50</h3>
+              <p>Aplica en todas las categorías esta semana.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carrusel-slide-contenido">
+              <h3>Nuevos productos cada semana</h3>
+              <p>Visita el catálogo y descubre las novedades.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselShopEasy" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselShopEasy" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+      <hr>
+    </section>
+
     <!-- SECCIÓN PRODUCTOS DESTACADOS -->
     <section id="productos-destacados">
       <h2>Productos destacados</h2>
@@ -84,8 +162,8 @@
           <h3>Auriculares Bluetooth</h3>
           <p>Categoría: Electrónica</p>
           <p>Precio: <strong>$45.99</strong></p>
-          <p class="nota">Stock disponible: 12 unidades</p>
-          <button><a href="#">Ver detalle</a></button><br><br>
+          <p class="nota">Stock disponible: 12 unidades</p><br>
+          <button><a href="#">Ver detalle</a></button>
           <button><a href="#carrito.html?agregar=501">Agregar al carrito</a></button>
         </article>
 
@@ -93,8 +171,8 @@
           <h3>Funda para laptop 15"</h3>
           <p>Categoría: Accesorios</p>
           <p>Precio: <strong>$18.50</strong></p>
-          <p class="nota">Stock disponible: 30 unidades</p>
-          <button><a href="#">Ver detalle</a></button><br><br>
+          <p class="nota">Stock disponible: 30 unidades</p><br>
+          <button><a href="#">Ver detalle</a></button>
           <button><a href="#carrito.html?agregar=501">Agregar al carrito</a></button>
         </article>
 
@@ -102,8 +180,8 @@
           <h3>Camiseta deportiva</h3>
           <p>Categoría: Ropa</p>
           <p>Precio: <strong>$12.00</strong></p>
-          <p class="nota">Stock disponible: 50 unidades</p>
-          <button><a href="#">Ver detalle</a></button><br><br>
+          <p class="nota">Stock disponible: 50 unidades</p><br>
+          <button><a href="#">Ver detalle</a></button>
           <button><a href="#carrito.html?agregar=501">Agregar al carrito</a></button>
         </article>
       </section>
@@ -151,13 +229,53 @@
 
     <!-- SECCIÓN INFORMACIÓN -->
     <section id="objetivo">
-      <details>
-        <summary>¿Cuál es el objetivo de ShopEasy?</summary>
-        <p>
-          El presente proyecto tiene como objetivo facilitar las compras online
-          de forma rápida, segura y accesible para todos los usuarios.
-        </p>
-      </details>
+      <!-- PREGUNTAS FRECUENTES (Bootstrap Accordion) -->
+      <section id="preguntas-frecuentes">
+        <h2>Preguntas frecuentes</h2>
+        <div class="accordion" id="accordionFAQ">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                ¿Cuánto tiempo tarda el envío?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+              <div class="accordion-body">
+                Entre 24 y 48 horas en Santo Domingo y ciudades cercanas. Otras zonas pueden tardar hasta 5 días
+                hábiles.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                ¿Qué métodos de pago aceptan?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+              <div class="accordion-body">
+                Aceptamos tarjeta de crédito, débito y pago contra entrega en efectivo.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                ¿Puedo devolver un producto?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+              <div class="accordion-body">
+                Sí, tienes 7 días desde la entrega para solicitar la devolución sin costo adicional.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
     </section>
 
     <!-- SECCIÓN OFERTA ESPECIAL -->
@@ -199,7 +317,7 @@
 
     <small>&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</small>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

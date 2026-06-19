@@ -179,3 +179,21 @@ p.nota {
 .botones-carrito a:hover {
     color: #f76b1c;
 }
+
+/* ============================================================
+   MOBILE-FIRST: ajustes responsivos del carrito
+   ============================================================ */
+.producto-carrito {
+    padding: 15px;
+}
+
+@media (min-width: 768px) {
+    #carrito-principal {
+        max-width: 900px;
+        margin: 30px auto;
+    }
+
+    .producto-carrito {
+        padding: 20px 30px;
+    }
+}

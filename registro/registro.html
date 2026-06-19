@@ -7,6 +7,7 @@
     <title>Registro - ShopEasy</title>
     <link rel="icon" href="../img/icon/carrito-de-compras.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/registro.css">
 </head>
@@ -15,15 +16,67 @@
 
     <!-- ENCABEZADO CON LOGO -->
     <header>
-        <figure class="logo-contenido">
-            <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
-        </figure>
-        <h1>ShopEasy</h1>
-        <p><em>Compra fácil, recibe rápido.</em></p>
+        <nav class="navbar navbar-expand-lg navbar-shopeasy">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="../home.html">
+                    <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
+                    <span>
+                        ShopEasy
+                        <small>Compra fácil, recibe rápido.</small>
+                    </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarShopEasy"
+                    aria-controls="navbarShopEasy" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarShopEasy">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../home.html">
+                                <i class="fa-solid fa-house"></i> Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../catalogo/catalogo.html">
+                                <i class="fa-solid fa-box"></i> Catálogo
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../carrito/carrito.html">
+                                <i class="fa-solid fa-cart-shopping"></i> Carrito
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../login/login.html">
+                                <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="registro.html">
+                                <i class="fa-solid fa-building-user"></i> Registrarse
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
     </header>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main>
+    <main class="main-centrado">
+
+        <!-- BREADCRUMB (Bootstrap) -->
+        <nav aria-label="breadcrumb" class="breadcrumb-shopeasy">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../home.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Registrarse</li>
+            </ol>
+        </nav>
+
         <section id="registro-principal">
 
             <figure class="logo-formulario">
@@ -33,22 +86,33 @@
             <h2>Crear cuenta nueva</h2>
             <p>Completa el formulario para unirte a ShopEasy.</p>
 
+            <!-- ALERT (Bootstrap) -->
+            <div class="alert alert-shopeasy" role="alert">
+                <i class="fa-solid fa-circle-info"></i>
+                El registro es gratuito y solo toma un minuto. Tus datos están protegidos según nuestra política de
+                privacidad.
+            </div>
+
             <form class="formulario-registro" action="../login/login.html" method="get" novalidate>
 
                 <!-- Tipo de cuenta -->
-                <fieldset>
+                <fieldset class="tipo-cuenta">
                     <legend>Tipo de cuenta</legend>
-                    <label><input type="radio" name="tipo" value="comprador" checked /> Comprador - Quiero comprar productos</label>
-                    <label><input type="radio" name="tipo" value="vendedor" /> Vendedor - Quiero vender productos</label>
+                    <label><input type="radio" name="tipo" value="comprador" checked /> Comprador - Quiero comprar
+                        productos</label>
+                    <label><input type="radio" name="tipo" value="vendedor" /> Vendedor - Quiero vender
+                        productos</label>
                 </fieldset>
 
                 <!-- Datos personales -->
                 <fieldset>
                     <legend>Datos personales</legend>
                     <label for="nombre">Nombre <abbr title="campo obligatorio">*</abbr></label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name" required />
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name"
+                        required />
                     <label for="apellido">Apellido <abbr title="campo obligatorio">*</abbr></label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" autocomplete="family-name" required />
+                    <input type="text" id="apellido" name="apellido" placeholder="Tu apellido"
+                        autocomplete="family-name" required />
                     <label for="fecha_nacimiento">Fecha de nacimiento <abbr title="campo obligatorio">*</abbr></label>
                     <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
                     <label for="genero">Género</label>
@@ -77,22 +141,28 @@
                 <fieldset>
                     <legend>Datos de acceso</legend>
                     <label for="email">Correo electrónico <abbr title="campo obligatorio">*</abbr></label>
-                    <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required />
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email"
+                        required />
                     <label for="password">Contraseña <abbr title="campo obligatorio">*</abbr></label>
-                    <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" minlength="8" required />
+                    <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres"
+                        autocomplete="new-password" minlength="8" required />
                     <p class="nota">Usa letras, números y símbolos para mayor seguridad.</p>
                     <label for="password2">Confirmar contraseña <abbr title="campo obligatorio">*</abbr></label>
-                    <input type="password" id="password2" name="password2" placeholder="Repite tu contraseña" autocomplete="new-password" required />
+                    <input type="password" id="password2" name="password2" placeholder="Repite tu contraseña"
+                        autocomplete="new-password" required />
                 </fieldset>
 
                 <!-- Preferencias y términos -->
                 <fieldset>
                     <legend>Preferencias y condiciones</legend>
-                    <label><input type="checkbox" name="newsletter" value="si" /> Quiero recibir ofertas y novedades por correo electrónico.</label>
-                    <label><input type="checkbox" name="notificaciones" value="si" /> Activar notificaciones de mis pedidos.</label>
+                    <label><input type="checkbox" name="newsletter" value="si" /> Quiero recibir ofertas y novedades por
+                        correo electrónico.</label>
+                    <label><input type="checkbox" name="notificaciones" value="si" /> Activar notificaciones de mis
+                        pedidos.</label>
                     <label>
-                        <input type="checkbox" name="terminos" value="acepto" required />
-                        He leído y acepto los <a href="#">Términos y condiciones</a> y la <a href="#">Política de privacidad</a>.
+                        <input type="checkbox" name="terminos-condiciones" value="acepto" required />
+                        He leído y acepto los <a href="#">Términos y condiciones</a> y la <a href="#">Política de
+                            privacidad</a>.
                         <abbr title="campo obligatorio">*</abbr>
                     </label>
                 </fieldset>
@@ -119,7 +189,7 @@
             </ul>
         </nav>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

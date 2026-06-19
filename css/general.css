@@ -115,6 +115,14 @@ main {
     text-align: center;
 }
 
+main.main-centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
 section {
     margin-bottom: 30px;
 }
@@ -359,6 +367,8 @@ button {
     font-family: inherit;
     font-weight: bold;
     cursor: pointer;
+    margin: 10px;
+    text-decoration: none;
 }
 
 button a {
@@ -369,19 +379,55 @@ button:hover {
     background-color: #1a3c6e;
 }
 
-
 fieldset {
     border: 2px solid #eeeeee;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 25px;
-    display: block;
+    display: flexbox;
+    text-align: left;
+}
+
+/* ===== CHECKBOXES Y RADIOS ===== */
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Cada opción en una sola línea */
+.tipo-cuenta label,
+.campo-form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: normal;
 }
 
 legend {
     font-weight: bold;
     color: #1a3c6e;
     padding: 0 10px;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.opcion input[type="checkbox"],
+.opcion input[type="radio"] {
+    width: auto;
+    margin: 0;
+    flex-shrink: 0;
 }
 
 abbr {
@@ -480,4 +526,164 @@ footer address a:hover {
 
 footer small {
     color: #aaaaaa;
+}
+
+/* ============================================================
+   BLOQUE 11: NAVBAR DE BOOTSTRAP PERSONALIZADO
+   Adapta el navbar al estilo visual de ShopEasy
+   (azul corporativo, logo, enlaces con icono).
+   ============================================================ */
+
+.navbar-shopeasy {
+    background-color: #1a3c6e;
+    padding: 12px 20px;
+}
+
+.navbar-shopeasy .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+}
+
+.navbar-shopeasy .navbar-brand img {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+}
+
+.navbar-shopeasy .navbar-brand span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.navbar-shopeasy .navbar-brand small {
+    font-size: 0.7rem;
+    font-weight: normal;
+    font-style: italic;
+    color: #c9d8ef;
+}
+
+.navbar-shopeasy .nav-link {
+    color: #d8e6f3 !important;
+    font-weight: 500;
+    padding: 8px 14px !important;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.navbar-shopeasy .nav-link i {
+    margin-right: 6px;
+}
+
+.navbar-shopeasy .nav-link:hover {
+    background-color: #2358a8;
+    color: #ffffff !important;
+}
+
+.navbar-shopeasy .nav-link.active {
+    background-color: #f76b1c;
+    color: #ffffff !important;
+}
+
+.navbar-shopeasy .navbar-toggler {
+    border: none;
+}
+
+.navbar-shopeasy .navbar-toggler:focus {
+    box-shadow: 0 0 0 2px #f76b1c;
+}
+
+/* Ícono de hamburguesa en blanco para que sea visible sobre fondo azul */
+.navbar-shopeasy .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ============================================================
+   BLOQUE 12: BREADCRUMB PERSONALIZADO (Bootstrap)
+   ============================================================ */
+
+.breadcrumb-shopeasy {
+    width: 100%;
+    max-width: 480px;
+    margin-top: 20px;
+}
+
+.breadcrumb-shopeasy .breadcrumb {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-bottom: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.breadcrumb-shopeasy .breadcrumb-item a {
+    color: #2358a8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb-shopeasy .breadcrumb-item a:hover {
+    color: #f76b1c;
+    text-decoration: underline;
+}
+
+.breadcrumb-shopeasy .breadcrumb-item.active {
+    color: #1a3c6e;
+    font-weight: bold;
+}
+
+/* ============================================================
+   BLOQUE 13: ALERT PERSONALIZADO (Bootstrap)
+   ============================================================ */
+
+.alert-shopeasy {
+    background-color: #e8f1fc;
+    border: 1px solid #b9d4ef;
+    color: #1a3c6e;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.9em;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.alert-shopeasy i {
+    color: #2358a8;
+    margin-right: 8px;
+}
+
+/* ============================================================
+   BLOQUE FINAL: AJUSTES MOBILE-FIRST GENERALES
+   Tipografía y espaciados base pensados para móvil,
+   que se amplían en pantallas más grandes.
+   ============================================================ */
+
+body {
+    font-size: 0.95rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+/* Tablet en adelante: aumenta tipografía y espaciado */
+@media (min-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Escritorio en adelante: márgenes más amplios en main */
+@media (min-width: 992px) {
+    main {
+        padding: 0 40px;
+    }
 }

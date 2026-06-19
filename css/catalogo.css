@@ -211,6 +211,7 @@ tbody td:first-child a:hover {
     padding: 6px 12px;
     border-radius: 5px;
     text-decoration: none;
+    margin: 10px;
 }
 
 .btn-ver:hover {
@@ -220,9 +221,9 @@ tbody td:first-child a:hover {
 .btn-agregar {
     background-color: #f76b1c;
     color: white !important;
-    padding: 6px 12px;
+    padding: 6px 12px; 
+    margin: 0;
     border-radius: 5px;
-    text-decoration: none;
 }
 
 .btn-agregar:hover {
@@ -247,21 +248,22 @@ tbody td:first-child a:hover {
     text-decoration: none !important;
 }
 
-@media (max-width: 768px) {
+/* BASE: móvil — sidebar y productos apilados verticalmente */
+#catalogo-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
 
+/* Escritorio: sidebar y productos lado a lado */
+@media (min-width: 768px) {
     #catalogo-layout {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
-    .btn-ver,
-    .btn-agregar {
-        display: block;
-        text-align: center;
-        margin-bottom: 5px;
+        flex-direction: row;
+        align-items: flex-start;
     }
 }
 
@@ -307,14 +309,53 @@ tbody td:first-child a:hover {
     margin-top: auto;
 }
 
-@media (max-width: 900px) {
+/* BASE: móvil — 1 columna */
+.productos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+/* Tablet: 2 columnas */
+@media (min-width: 600px) {
     .productos-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 500px) {
+/* Escritorio: 3 columnas */
+@media (min-width: 992px) {
     .productos-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
+}
+
+/* ============================================================
+   BLOQUE 9: MODAL PERSONALIZADO (Bootstrap)
+   ============================================================ */
+
+.modal-producto {
+    border-radius: 12px;
+    border: none;
+}
+
+.modal-producto .modal-header {
+    background-color: #1a3c6e;
+    color: #ffffff;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-producto .modal-title {
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.btn-cerrar-modal {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5em;
+    line-height: 1;
+    cursor: pointer;
 }

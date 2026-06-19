@@ -1,0 +1,80 @@
+[
+  {
+    "id": 501,
+    "nombre": "Auriculares Bluetooth Pro",
+    "categoria": "Electrónica",
+    "descripcion": "Auriculares inalámbricos con cancelación de ruido, 30 horas de batería y estuche de carga incluido.",
+    "precio": 45.99,
+    "precioAnterior": 57.99,
+    "descuento": 20,
+    "calificacion": 4,
+    "resenas": 128,
+    "stock": "disponible",
+    "imagen": "img/productos/auriculares-bluetooth-pro.jpg"
+  },
+  {
+    "id": 502,
+    "nombre": "Zapatillas Running Lite",
+    "categoria": "Deportes",
+    "descripcion": "Zapatillas ligeras para correr, con suela amortiguada y malla transpirable.",
+    "precio": 89.00,
+    "precioAnterior": null,
+    "descuento": 0,
+    "calificacion": 5,
+    "resenas": 64,
+    "stock": "disponible",
+    "imagen": "img/productos/zapatillas-running-lite.jpg"
+  },
+  {
+    "id": 503,
+    "nombre": "Mochila Urban Slim 20L",
+    "categoria": "Accesorios",
+    "descripcion": "Mochila urbana de 20 litros con compartimento acolchado para laptop de hasta 15 pulgadas.",
+    "precio": 34.50,
+    "precioAnterior": null,
+    "descuento": 0,
+    "calificacion": 4,
+    "resenas": 41,
+    "stock": "disponible",
+    "imagen": "img/productos/mochila-urban-slim.jpg"
+  },
+  {
+    "id": 504,
+    "nombre": "Smartwatch FitPro X2",
+    "categoria": "Electrónica",
+    "descripcion": "Reloj inteligente con monitor de ritmo cardíaco, GPS integrado y resistencia al agua.",
+    "precio": 79.99,
+    "precioAnterior": 122.99,
+    "descuento": 35,
+    "calificacion": 4,
+    "resenas": 89,
+    "stock": "ultimas_unidades",
+    "imagen": "img/productos/smartwatch-fitpro-x2.jpg"
+  },
+  {
+    "id": 505,
+    "nombre": "Laptop UltraBook 15\"",
+    "categoria": "Electrónica",
+    "descripcion": "Laptop ultradelgada de 15 pulgadas, ideal para trabajo y estudio, con SSD de alto rendimiento.",
+    "precio": 649.99,
+    "precioAnterior": 899.99,
+    "descuento": 28,
+    "calificacion": 5,
+    "resenas": 210,
+    "stock": "disponible",
+    "imagen": "img/productos/laptop-ultrabook-15.jpg"
+  },
+  {
+    "id": 506,
+    "nombre": "Control Gaming Inalámbrico",
+    "categoria": "Electrónica",
+    "descripcion": "Control inalámbrico compatible con PC y consola, con vibración dual y batería recargable.",
+    "precio": 39.99,
+    "precioAnterior": 60.00,
+    "descuento": 33,
+    "calificacion": 4,
+    "resenas": 45,
+    "stock": "agotado",
+    "imagen": "img/productos/control-gaming-inalambrico.jpg"
+  }
+]

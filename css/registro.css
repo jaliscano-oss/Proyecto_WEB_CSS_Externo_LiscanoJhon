@@ -4,7 +4,7 @@
    ============================================================ */
 
 #registro-principal {
-    max-width: 600px;
+    max-width: 480px;
     margin: 40px auto;
     background-color: #ffffff;
     border-radius: 12px;
@@ -42,6 +42,15 @@
    BLOQUE 3: FORMULARIO DE REGISTRO
    Organización de campos y espaciado entre elementos.
    ============================================================ */
+
+fieldset.tipo-cuenta {
+    border: 2px solid #eeeeee;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flexbox;
+    text-align: center;
+}
 
 .formulario-registro {
     width: 100%;
@@ -111,4 +120,20 @@ p.nota {
 
 .btn-enviar:hover {
     background-color: #d4590e;
+}
+
+/* ============================================================
+   MOBILE-FIRST: ajustes responsivos del registro
+   ============================================================ */
+#registro-principal {
+    margin: 20px 15px;
+    padding: 25px;
+}
+
+@media (min-width: 600px) {
+    #registro-principal {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 40px;
+    }
 }

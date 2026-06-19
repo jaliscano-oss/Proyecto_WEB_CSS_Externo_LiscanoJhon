@@ -232,36 +232,37 @@ p.nota {
    Alinea logo, título y nav dentro del header.
    ============================================================ */
 
-header {
+/* header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
 }
-
+ */
 /* ============================================================
    BLOQUE 10: GALERÍA VISUAL DE CATEGORÍAS CON GRID
    Presenta las categorías como un mosaico de tarjetas con Grid.
    ============================================================ */
 
+/* BASE: móvil — 1 columna */
 #categorias .grupo-tarjetas {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px;
     margin: 20px 0;
 }
 
-/* Para pantallas medianas */
-@media (max-width: 900px) {
+/* Tablet en adelante: 2 columnas */
+@media (min-width: 600px) {
     #categorias .grupo-tarjetas {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Para pantallas pequeñas */
-@media (max-width: 500px) {
+/* Escritorio en adelante: 4 columnas */
+@media (min-width: 992px) {
     #categorias .grupo-tarjetas {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -270,22 +271,26 @@ header {
    Organiza los productos destacados en columnas con Grid.
    ============================================================ */
 
+/* BASE: móvil — 1 columna */
 #productos-destacados .grupo-tarjetas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px;
     margin: 20px 0;
 }
 
-@media (max-width: 800px) {
+/* Tablet: 2 columnas */
+@media (min-width: 600px) {
     #productos-destacados .grupo-tarjetas {
         grid-template-columns: repeat(2, 1fr);
+        text-align: center;
     }
 }
 
-@media (max-width: 500px) {
+/* Escritorio: 3 columnas */
+@media (min-width: 900px) {
     #productos-destacados .grupo-tarjetas {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -314,4 +319,67 @@ header {
 #elegirnos .tarjeta {
     flex: 1 1 200px;
     max-width: 260px;
+}
+
+/* ============================================================
+   BLOQUE 14: CARRUSEL PERSONALIZADO (Bootstrap)
+   ============================================================ */
+
+#carrusel-ofertas .carousel {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.carrusel-slide-contenido {
+    background: linear-gradient(135deg, #1a3c6e 0%, #2358a8 100%);
+    color: #ffffff;
+    padding: 60px 30px;
+    text-align: center;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrusel-slide-contenido h3 {
+    color: #ffffff;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.carrusel-slide-contenido p {
+    color: #d0dff5;
+    font-size: 1.05em;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #f76b1c;
+}
+
+/* ============================================================
+   BLOQUE 15: ACCORDION PERSONALIZADO (Bootstrap)
+   ============================================================ */
+
+#preguntas-frecuentes .accordion-item {
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#preguntas-frecuentes .accordion-button {
+    font-weight: bold;
+    color: #1a3c6e;
+    background-color: #ffffff;
+}
+
+#preguntas-frecuentes .accordion-button:not(.collapsed) {
+    color: #2358a8;
+    background-color: #f0f4ff;
+}
+
+#preguntas-frecuentes .accordion-button:focus {
+    box-shadow: 0 0 0 2px #2358a8;
 }
