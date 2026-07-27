@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Electrónica",
+    "descripcion": "Dispositivos electrónicos, accesorios tecnológicos y gadgets",
+    "imagen": "../img/productosElec.avif",
+    "icono": "fa-solid fa-laptop"
+  },
+  {
+    "id": 2,
+    "nombre": "Ropa y Moda",
+    "descripcion": "Ropa deportiva, casual y accesorios de moda",
+    "imagen": "../img/productosRopa.jpg",
+    "icono": "fa-solid fa-shirt"
+  },
+  {
+    "id": 3,
+    "nombre": "Hogar",
+    "descripcion": "Artículos para decoración y organización del hogar",
+    "imagen": "../img/productosHogar.jpg",
+    "icono": "fa-solid fa-house"
+  },
+  {
+    "id": 4,
+    "nombre": "Deportes",
+    "descripcion": "Equipamiento deportivo y fitness",
+    "imagen": "../img/productosDeportes.jpg",
+    "icono": "fa-solid fa-futbol"
+  }
+]
