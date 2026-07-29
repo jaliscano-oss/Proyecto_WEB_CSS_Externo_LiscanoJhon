@@ -157,3 +157,37 @@
     display: flex !important;
 }
 
+/* Estilos del carrusel - limitar altura de imágenes */
+#carruselShopEasy .carousel-inner {
+    max-height: 500px;
+    overflow: hidden;
+}
+
+#carruselShopEasy .carousel-item img {
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+/* Responsive: reducir altura en dispositivos móviles */
+@media (max-width: 768px) {
+    #carruselShopEasy .carousel-inner {
+        max-height: 300px;
+    }
+    
+    #carruselShopEasy .carousel-item img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    #carruselShopEasy .carousel-inner {
+        max-height: 200px;
+    }
+    
+    #carruselShopEasy .carousel-item img {
+        max-height: 200px;
+    }
+}
+
