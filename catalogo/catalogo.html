@@ -8,18 +8,24 @@
     <link rel="icon" href="../img/icon/carrito-de-compras.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/catalogo.css">
 </head>
 
-<body>
+<body class="bg-light">
 
-    <!-- ENCABEZADO / NAVEGACIÓN -->
+    <!-- Botón flotante del carrito -->
+    <a href="../carrito/carrito.html" class="floating-cart text-decoration-none" title="Ver carrito">
+        <i class="fa-solid fa-shopping-cart"></i>
+        <span class="badge bg-danger" id="floating-cart-badge" style="display: none;">0</span>
+    </a>
+
+    <!-- NAVBAR -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-shopeasy">
             <div class="container-fluid">
-
-                <a class="navbar-brand" href="../home.html">
+                <a class="navbar-brand" href="../index.html">
                     <img src="../img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
                     <span>
                         ShopEasy
@@ -27,15 +33,14 @@
                     </span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarShopEasy"
-                    aria-controls="navbarShopEasy" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarShopEasy">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarShopEasy">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../home.html">
+                            <a class="nav-link" href="../index.html">
                                 <i class="fa-solid fa-house"></i> Inicio
                             </a>
                         </li>
@@ -46,7 +51,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../carrito/carrito.html">
-                                <i class="fa-solid fa-cart-shopping"></i> Carrito (3)
+                                <i class="fa-solid fa-cart-shopping"></i> Carrito
                             </a>
                         </li>
                         <li class="nav-item">
@@ -61,61 +66,116 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </nav>
     </header>
 
     <!-- Barra de búsqueda -->
-    <section id="barra-busqueda">
-        <form class="formulario-busqueda" action="../catalogo/catalogo.html" method="get">
-            <input type="search" name="q" placeholder="Buscar productos, marcas y más..." />
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+    <section class="container my-4">
+        <form action="../catalogo/catalogo.html" method="get">
+            <div class="input-group input-group-lg">
+                <input type="search" name="q" class="form-control" placeholder="Buscar productos, marcas y más..." />
+                <button type="submit" class="btn btn-shopeasy">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i>Buscar
+                </button>
+            </div>
         </form>
     </section>
 
     <!-- LAYOUT CATÁLOGO -->
     <section id="catalogo-layout">
 
+        <!-- Botón flotante de filtros para móviles -->
+        <button class="btn-filtros-mobile" onclick="toggleFiltrosMobile()" aria-label="Abrir filtros">
+            <i class="fa-solid fa-filter"></i>
+            <span>Filtros</span>
+        </button>
+
+        <!-- Overlay para cerrar el drawer -->
+        <div class="filtros-overlay" onclick="toggleFiltrosMobile()"></div>
+
         <!-- Sidebar filtros -->
-        <aside class="sidebar">
-            <h2>Filtros</h2>
-            <form action="../catalogo/catalogo.html" method="get">
+        <aside class="sidebar" id="sidebar-filtros">
+            <div class="filtros-header">
+                <h2><i class="fa-solid fa-filter"></i> Filtros</h2>
+                <div class="filtros-header-actions">
+                    <button type="button" class="btn-limpiar-filtros" onclick="limpiarFiltros()" title="Limpiar todos los filtros">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                    <button type="button" class="btn-cerrar-filtros-mobile" onclick="toggleFiltrosMobile()" aria-label="Cerrar filtros">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <form action="../catalogo/catalogo.html" method="get" id="form-filtros">
 
                 <section class="filtro-grupo">
-                    <h3>Categoría</h3>
-                    <label><input type="checkbox" name="cat" value="electronica" checked /> Electrónica</label>
-                    <label><input type="checkbox" name="cat" value="ropa" /> Ropa y Moda</label>
-                    <label><input type="checkbox" name="cat" value="hogar" /> Hogar</label>
-                    <label><input type="checkbox" name="cat" value="deportes" /> Deportes</label>
-                    <label><input type="checkbox" name="cat" value="libros" /> Libros</label>
-                    <label><input type="checkbox" name="cat" value="juguetes" /> Juguetes</label>
+                    <h3><i class="fa-solid fa-layer-group"></i> Categoría</h3>
+                    <select name="categoria" class="form-select" onchange="aplicarFiltrosAuto()">
+                        <option value="todas">Todas las categorías</option>
+                        <!-- Se cargarán dinámicamente -->
+                    </select>
                 </section>
 
                 <section class="filtro-grupo">
-                    <h3>Calificación</h3>
-                    <label><input type="radio" name="stars" value="5" /> ★★★★★ 5 estrellas</label>
-                    <label><input type="radio" name="stars" value="4" checked /> ★★★★☆ 4 o más</label>
-                    <label><input type="radio" name="stars" value="3" /> ★★★☆☆ 3 o más</label>
+                    <h3><i class="fa-solid fa-star"></i> Calificación</h3>
+                    <div class="filtro-opciones">
+                        <label class="filtro-radio">
+                            <input type="radio" name="stars" value="5" onchange="aplicarFiltrosAuto()" />
+                            <span class="radio-custom"></span>
+                            <span class="rating-stars">★★★★★</span> 5 estrellas
+                        </label>
+                        <label class="filtro-radio">
+                            <input type="radio" name="stars" value="4" checked onchange="aplicarFiltrosAuto()" />
+                            <span class="radio-custom"></span>
+                            <span class="rating-stars">★★★★☆</span> 4 o más
+                        </label>
+                        <label class="filtro-radio">
+                            <input type="radio" name="stars" value="3" onchange="aplicarFiltrosAuto()" />
+                            <span class="radio-custom"></span>
+                            <span class="rating-stars">★★★☆☆</span> 3 o más
+                        </label>
+                    </div>
                 </section>
 
                 <section class="filtro-grupo">
-                    <h3>Precio ($)</h3>
-                    <label for="min">Mínimo</label>
-                    <input type="number" id="min" name="min" placeholder="0" min="0" />
-                    <label for="max">Máximo</label>
-                    <input type="number" id="max" name="max" placeholder="1000" min="0" />
+                    <h3><i class="fa-solid fa-dollar-sign"></i> Precio</h3>
+                    <div class="precio-inputs">
+                        <div class="input-wrapper">
+                            <label for="min">Mínimo</label>
+                            <input type="number" id="min" name="min" placeholder="$0" min="0" class="form-control" />
+                        </div>
+                        <span class="precio-separator">—</span>
+                        <div class="input-wrapper">
+                            <label for="max">Máximo</label>
+                            <input type="number" id="max" name="max" placeholder="$1000" min="0" class="form-control" />
+                        </div>
+                    </div>
+                    <button type="button" class="btn-aplicar-precio" onclick="aplicarFiltrosAuto()">
+                        <i class="fa-solid fa-check"></i> Aplicar
+                    </button>
                 </section>
 
                 <section class="filtro-grupo">
-                    <h3>Disponibilidad</h3>
-                    <label><input type="checkbox" name="stock" value="disponible" checked /> Solo en stock</label>
-                    <label><input type="checkbox" name="envio" value="gratis" /> Envío gratis</label>
+                    <h3><i class="fa-solid fa-box-open"></i> Disponibilidad</h3>
+                    <div class="filtro-opciones">
+                        <label class="filtro-checkbox">
+                            <input type="checkbox" name="stock" value="disponible" checked onchange="aplicarFiltrosAuto()" />
+                            <span class="checkbox-custom"></span>
+                            Solo en stock
+                        </label>
+                        <label class="filtro-checkbox">
+                            <input type="checkbox" name="envio" value="gratis" onchange="aplicarFiltrosAuto()" />
+                            <span class="checkbox-custom"></span>
+                            Envío gratis
+                        </label>
+                    </div>
                 </section>
 
                 <section class="filtro-grupo">
-                    <h3>Ordenar por</h3>
-                    <select name="orden">
+                    <h3><i class="fa-solid fa-arrow-down-wide-short"></i> Ordenar por</h3>
+                    <select name="orden" class="form-select" onchange="aplicarFiltrosAuto()">
                         <option value="relevancia">Relevancia</option>
                         <option value="precio-asc">Precio: menor a mayor</option>
                         <option value="precio-desc">Precio: mayor a menor</option>
@@ -124,17 +184,43 @@
                     </select>
                 </section>
 
-                <button type="submit" class="btn-filtro">Aplicar filtros</button>
-                <button type="reset" class="btn-limpiar">Limpiar</button>
+                <div class="filtros-actions">
+                    <button type="submit" class="btn-aplicar-filtros" onclick="aplicarFiltrosYCerrar(); return false;">
+                        <i class="fa-solid fa-check"></i> Aplicar filtros
+                    </button>
+                </div>
             </form>
         </aside>
 
         <!-- Productos -->
         <section id="lista-productos">
-            <p class="resultado-busqueda">Mostrando <strong>6 de 124</strong> productos en <strong>Electrónica</strong>
-            </p>
+            <!-- Header con contador de resultados y toggle de vista -->
+            <div class="productos-header">
+                <p class="resultado-busqueda">Cargando productos...</p>
+                
+                <div class="vista-toggle">
+                    <button class="btn-vista active" data-vista="grid" onclick="cambiarVista('grid')" title="Vista en cuadrícula">
+                        <i class="fa-solid fa-grid"></i>
+                    </button>
+                    <button class="btn-vista" data-vista="tabla" onclick="cambiarVista('tabla')" title="Vista en tabla">
+                        <i class="fa-solid fa-table"></i>
+                    </button>
+                </div>
+            </div>
 
-            <section class="tabla-wrap">
+            <!-- Vista en GRID (por defecto) -->
+            <section class="productos-grid vista-activa">
+                <!-- Las tarjetas se cargan dinámicamente aquí -->
+                <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Cargando productos...</span>
+                    </div>
+                    <p style="margin-top: 15px; color: #666;">Cargando catálogo...</p>
+                </div>
+            </section>
+
+            <!-- Vista en TABLA (oculta por defecto) -->
+            <section class="tabla-wrap vista-oculta">
                 <table>
                     <caption>Lista de productos disponibles en ShopEasy</caption>
                     <thead>
@@ -150,218 +236,58 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Los productos se cargan dinámicamente aquí -->
                         <tr>
-
-                            <td><img src="../img/auricularesInalambricos.jpg" alt="auriculares-bluetooth-pro"><a
-                                    href="#producto.html?id=501">Auriculares Bluetooth Pro</a></td>
-                            <td>Electrónica</td>
-                            <td><strong>$45.99</strong></td>
-                            <td><s>$57.99</s></td>
-                            <td>20%</td>
-                            <td>★★★★☆ (128)</td>
-                            <td><span class="badge badge-verde">Disponible</span></td>
-                            <td>
-                                <a href="#" class="btn-ver" data-bs-toggle="modal"
-                                    data-bs-target="#modalAuriculares">Ver</a><br><br>
-                                <a href="#carrito.html?agregar=501" class="btn-agregar">Agregar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../img/zapatillasRunning.jpg" alt="zapatillas-running-lite"><a
-                                    href="#producto.html?id=502">Zapatillas Running Lite</a></td>
-                            <td>Deportes</td>
-                            <td><strong>$89.00</strong></td>
-                            <td>—</td>
-                            <td>—</td>
-                            <td>★★★★★ (64)</td>
-                            <td><span class="badge badge-verde">Disponible</span></td>
-                            <td>
-                                <a href="#producto.html?id=502" class="btn-ver">Ver</a><br><br>
-                                <a href="#carrito.html?agregar=502" class="btn-agregar">Agregar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../img/mochilaUrbanSlim20L.jpg" alt="mochila-urban-slim-20L"><a
-                                    href="#producto.html?id=503">Mochila Urban Slim 20L</a></td>
-                            <td>Accesorios</td>
-                            <td><strong>$34.50</strong></td>
-                            <td>—</td>
-                            <td>—</td>
-                            <td>★★★★☆ (41)</td>
-                            <td><span class="badge badge-verde">Disponible</span></td>
-                            <td>
-                                <a href="#producto.html?id=503" class="btn-ver">Ver</a><br><br>
-                                <a href="#carrito.html?agregar=503" class="btn-agregar">Agregar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../img/smartwatchFitProX2.jpg" alt="smartwatch-fitpro-x2"><a
-                                    href="#producto.html?id=504">Smartwatch FitPro X2</a></td>
-                            <td>Electrónica</td>
-                            <td><strong>$79.99</strong></td>
-                            <td><s>$122.99</s></td>
-                            <td>35%</td>
-                            <td>★★★★☆ (89)</td>
-                            <td><span class="badge badge-amarillo">Últimas 3</span></td>
-                            <td>
-                                <a href="#producto.html?id=504" class="btn-ver">Ver</a><br><br>
-                                <a href="#carrito.html?agregar=504" class="btn-agregar">Agregar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../img/laptopUltraBook15'.jpg" alt="laptop-ultrabook-15'"><a
-                                    href="#producto.html?id=505">Laptop UltraBook 15"</a></td>
-                            <td>Electrónica</td>
-                            <td><strong>$649.99</strong></td>
-                            <td><s>$899.99</s></td>
-                            <td>28%</td>
-                            <td>★★★★★ (210)</td>
-                            <td><span class="badge badge-verde">Disponible</span></td>
-                            <td>
-                                <a href="#producto.html?id=505" class="btn-ver">Ver</a><br><br>
-                                <a href="#carrito.html?agregar=505" class="btn-agregar">Agregar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../img/controlGammingInalambrico.jpg" alt="control-gaming-inalambrico"><a
-                                    href="#producto.html?id=506">Control Gaming Inalámbrico</a></td>
-                            <td>Electrónica</td>
-                            <td><strong>$39.99</strong></td>
-                            <td><s>$60.00</s></td>
-                            <td>33%</td>
-                            <td>★★★★☆ (45)</td>
-                            <td><span class="badge badge-rojo">Agotado</span></td>
-                            <td>
-                                <a href="#producto.html?id=506" class="btn-ver">Ver</a><br><br>
+                            <td colspan="8" style="text-align: center; padding: 40px;">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Cargando productos...</span>
+                                </div>
+                                <p style="margin-top: 15px; color: #666;">Cargando catálogo...</p>
                             </td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="8">
-                                Página:
-                                <a href="#" class="enlace-activo">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">…</a>
-                                <a href="#">Siguiente →</a>
+                            <td colspan="8" id="paginacion-tabla">
+                                <!-- La paginación se genera dinámicamente -->
                             </td>
                         </tr>
                     </tfoot>
                 </table>
             </section>
-            <!-- VISTA EN TARJETAS CON GRID -->
-            <section class="productos-grid">
-                <article class="producto-card">
-                    <img src="../img/auricularesInalambricos.jpg" alt="auriculares-bluetooth-pro">
-                    <h3>Auriculares Bluetooth Pro</h3>
-                    <p>Electrónica</p>
-                    <p class="precio">$45.99 <s style="color:#888;font-weight:normal;font-size:0.85em">$57.99</s></p>
-                    <span class="badge badge-verde">Disponible</span>
-                    <div class="acciones">
-                        <a href="#" class="btn-ver" data-bs-toggle="modal" data-bs-target="#modalAuriculares">Ver</a>
-                        <a href="#" class="btn-agregar">Agregar</a>
-                    </div>
-                </article>
-                <article class="producto-card">
-                    <img src="../img/zapatillasRunning.jpg" alt="zapatillas-running-lite">
-                    <h3>Zapatillas Running Lite</h3>
-                    <p>Deportes</p>
-                    <p class="precio">$89.00</p>
-                    <span class="badge badge-verde">Disponible</span>
-                    <div class="acciones">
-                        <a href="#" class="btn-ver">Ver</a>
-                        <a href="#" class="btn-agregar">Agregar</a>
-                    </div>
-                </article>
-                <article class="producto-card">
-                    <img src="../img/mochilaUrbanSlim20L.jpg" alt="mochila-urban-slim-20L">
-                    <h3>Mochila Urban Slim 20L</h3>
-                    <p>Accesorios</p>
-                    <p class="precio">$34.50</p>
-                    <span class="badge badge-verde">Disponible</span>
-                    <div class="acciones">
-                        <a href="#" class="btn-ver">Ver</a>
-                        <a href="#" class="btn-agregar">Agregar</a>
-                    </div>
-                </article>
-                <article class="producto-card">
-                    <img src="../img/smartwatchFitProX2.jpg" alt="smartwatch-fitpro-x2">
-                    <h3>Smartwatch FitPro X2</h3>
-                    <p>Electrónica</p>
-                    <p class="precio">$79.99 <s style="color:#888;font-weight:normal;font-size:0.85em">$122.99</s></p>
-                    <span class="badge badge-amarillo">Últimas 3</span>
-                    <div class="acciones">
-                        <a href="#" class="btn-ver">Ver</a>
-                        <a href="#" class="btn-agregar">Agregar</a>
-                    </div>
-                </article>
-                <article class="producto-card">
-                    <img src="../img/laptopUltraBook15'.jpg" alt="laptop-ultrabook-15'">
-                    <h3>Laptop UltraBook 15"</h3>
-                    <p>Electrónica</p>
-                    <p class="precio">$649.99 <s style="color:#888;font-weight:normal;font-size:0.85em">$899.99</s></p>
-                    <span class="badge badge-verde">Disponible</span>
-                    <div class="acciones">
-                        <a href="#" class="btn-ver">Ver</a>
-                        <a href="#" class="btn-agregar">Agregar</a>
-                    </div>
-                </article>
-                <article class="producto-card">
-                    <img src="../img/controlGammingInalambrico.jpg" alt="control-gaming-inalambrico">
-                    <h3>Control Gaming Inalámbrico</h3>
-                    <p>Electrónica</p>
-                    <p class="precio">$39.99</p>
-                    <span class="badge badge-rojo">Agotado</span>
-                    <div class="acciones">
-                        <a href="#" class="btn-ver">Ver</a>
-                    </div>
-                </article>
-            </section>
+
+            <!-- Paginación (compartida entre ambas vistas) -->
+            <div id="paginacion-productos" class="paginacion-container"></div>
         </section>
 
     </section><!-- fin #catalogo-layout -->
 
-    <!-- MODAL DETALLE DE PRODUCTO (Bootstrap) -->
-    <div class="modal fade" id="modalAuriculares" tabindex="-1" aria-labelledby="modalAuricularesLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-producto">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="modalAuricularesLabel">Auriculares Bluetooth Pro</h2>
-                    <button type="button" class="btn-cerrar-modal" data-bs-dismiss="modal"
-                        aria-label="Cerrar">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Categoría:</strong> Electrónica</p>
-                    <p><strong>Precio:</strong> $45.99 <s>$57.99</s> (20% OFF)</p>
-                    <p><strong>Calificación:</strong> ★★★★☆ (128 reseñas)</p>
-                    <p>Auriculares inalámbricos con cancelación de ruido, 30 horas de batería y estuche de carga
-                        incluido.</p>
-                    <span class="badge badge-verde">Disponible</span>
-                    <a href="#" class="btn-agregar">Agregar al carrito</a>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-limpiar" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Los modales de detalle se generan dinámicamente con catalogo.js -->
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-        <p>&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</p>
-        <hr><br>
-        <nav>
-            <ul>
-                <li><a href="../home.html">Inicio</a></li>
-                <li><a href="../login/login.html">Iniciar sesión</a></li>
-                <li><a href="../registro/registro.html">Registrarse</a></li>
-                <li><a href="../carrito/carrito.html">Carrito</a></li>
-            </ul>
-        </nav>
+    <!-- FOOTER -->
+    <footer class="mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</p>
+            <nav>
+                <a href="../index.html" class="me-3">Inicio</a>
+                <a href="../login/login.html" class="me-3">Iniciar sesión</a>
+                <a href="../registro/registro.html" class="me-3">Registrarse</a>
+                <a href="../carrito/carrito.html">Carrito</a>
+            </nav>
+        </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- Scripts propios -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/datos.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/validaciones.js"></script>
+  <script src="../js/componentes.js"></script>
+  <script src="../js/catalogo.js"></script>
 </body>
 
 </html>
