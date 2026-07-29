@@ -9,17 +9,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
 
-<body>
+<body class="bg-light">
 
-  <!-- ENCABEZADO / NAVEGACIÓN -->
+  <!-- Loader de bienvenida -->
+  <div id="welcome-loader">
+    <img src="img/logoCarritoShopEasy.png" alt="ShopEasy" class="loader-logo">
+    <div class="loader-text">ShopEasy</div>
+    <div class="loader-spinner"></div>
+    <p class="loader-subtitle">Cargando tu experiencia de compra...</p>
+  </div>
+
+  <!-- Banner de notificación -->
+  <div id="notification-banner" class="alert alert-info alert-dismissible fade position-fixed top-0 end-0 m-3 notification-custom" role="alert">
+    <h5 class="alert-heading">
+      <i class="fa-solid fa-gift me-2"></i>¡Bienvenido a ShopEasy!
+    </h5>
+    <p class="mb-0 small">
+      Usa el código <strong>BIENVENIDO15</strong> y obtén 15% de descuento en tu primera compra
+    </p>
+    <button type="button" class="btn-close" onclick="cerrarNotificacion()" aria-label="Close"></button>
+  </div>
+
+  <!-- Botón flotante del carrito -->
+  <a href="carrito/carrito.html" class="floating-cart text-decoration-none" title="Ver carrito">
+    <i class="fa-solid fa-shopping-cart"></i>
+    <span class="badge bg-danger floating-cart-badge" id="floating-cart-badge">0</span>
+  </a>
+
+  <!-- NAVBAR -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-shopeasy">
       <div class="container-fluid">
-
         <a class="navbar-brand" href="index.html">
           <img src="img/logoCarritoShopEasy.png" alt="Logo carrito ShopEasy" />
           <span>
@@ -28,8 +52,7 @@
           </span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarShopEasy"
-          aria-controls="navbarShopEasy" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarShopEasy">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -62,91 +85,96 @@
             </li>
           </ul>
         </div>
-
       </div>
     </nav>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main>
+  <!-- MAIN -->
+  <main class="container py-5">
 
     <!-- SECCIÓN HERO / BIENVENIDA -->
-    <section id="presentacion">
-      <h2>Bienvenido a ShopEasy</h2>
-      <p>Encuentra los mejores productos al mejor precio. Compra desde cualquier lugar y recíbelos en la puerta de tu
-        casa.</p>
-      <button><a href="catalogo/catalogo.html">Ver catálogo</a></button>
-      &nbsp;
-      <button><a href="registro/registro.html">Crear cuenta gratis</a></button>
+    <section class="text-center mb-5 p-5 bg-white rounded shadow-sm">
+      <h2 class="display-4 text-shopeasy mb-3">Bienvenido a ShopEasy</h2>
+      <p class="lead text-muted mb-4">Encuentra los mejores productos al mejor precio. Compra desde cualquier lugar y recíbelos en la puerta de tu casa.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="catalogo/catalogo.html" class="btn btn-shopeasy btn-lg">
+          <i class="fa-solid fa-shopping-bag me-2"></i>Ver catálogo
+        </a>
+        <a href="registro/registro.html" class="btn btn-outline-primary btn-lg">
+          <i class="fa-solid fa-user-plus me-2"></i>Crear cuenta gratis
+        </a>
+      </div>
     </section>
 
     <!-- SECCIÓN CATEGORÍAS -->
-    <section id="categorias">
-      <h2>Categorías destacadas</h2>
+    <section class="mb-5">
+      <h2 class="text-center mb-4 text-shopeasy">Categorías destacadas</h2>
 
-      <section class="grupo-tarjetas">
-        <article class="tarjeta">
-          <h3>Electrónica</h3>
-          <img src="img/productosElec.avif" alt="productos-electronicos">
-          <p>Auriculares, cargadores, accesorios para laptop y más.</p>
-          <button><a href="catalogo/catalogo.html">Ver productos</a></button>
-        </article>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card">
+            <img src="img/productosElec.avif" class="card-img-top" alt="productos-electronicos">
+            <div class="card-body text-center">
+              <h3 class="card-title h5">Electrónica</h3>
+              <p class="card-text">Auriculares, cargadores, accesorios para laptop y más.</p>
+              <a href="catalogo/catalogo.html" class="btn btn-outline-primary">Ver productos</a>
+            </div>
+          </div>
+        </div>
 
-        <article class="tarjeta">
-          <h3>Ropa y Moda</h3>
-          <img src="img/productosRopa.jpg" alt="productos-ropaymoda">
-          <p>Camisetas, zapatos, accesorios para toda la familia.</p>
-          <button><a href="catalogo/catalogo.html">Ver productos</a></button>
-        </article>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card">
+            <img src="img/productosRopa.jpg" class="card-img-top" alt="productos-ropaymoda">
+            <div class="card-body text-center">
+              <h3 class="card-title h5">Ropa y Moda</h3>
+              <p class="card-text">Camisetas, zapatos, accesorios para toda la familia.</p>
+              <a href="catalogo/catalogo.html" class="btn btn-outline-primary">Ver productos</a>
+            </div>
+          </div>
+        </div>
 
-        <article class="tarjeta">
-          <h3>Hogar</h3>
-          <img src="img/productosHogar.jpg" alt="productos-hogar">
-          <p>Todo lo que necesitas para decorar y organizar tu hogar.</p>
-          <button><a href="catalogo/catalogo.html">Ver productos</a></button>
-        </article>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card">
+            <img src="img/productosHogar.jpg" class="card-img-top" alt="productos-hogar">
+            <div class="card-body text-center">
+              <h3 class="card-title h5">Hogar</h3>
+              <p class="card-text">Todo lo que necesitas para decorar y organizar tu hogar.</p>
+              <a href="catalogo/catalogo.html" class="btn btn-outline-primary">Ver productos</a>
+            </div>
+          </div>
+        </div>
 
-        <article class="tarjeta">
-          <h3>Deportes</h3>
-          <img src="img/productosDeportes.jpg" alt="productos-deportes">
-          <p>Equipamiento deportivo para tus actividades favoritas.</p>
-          <button><a href="catalogo/catalogo.html">Ver productos</a></button>
-        </article>
-      </section>
-      <hr>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card">
+            <img src="img/productosDeportes.jpg" class="card-img-top" alt="productos-deportes">
+            <div class="card-body text-center">
+              <h3 class="card-title h5">Deportes</h3>
+              <p class="card-text">Equipamiento deportivo para tus actividades favoritas.</p>
+              <a href="catalogo/catalogo.html" class="btn btn-outline-primary">Ver productos</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CARRUSEL DE OFERTAS / PRODUCTOS DESTACADOS (Bootstrap) -->
-    <section id="carrusel-ofertas">
-      <h2>Destacados de la semana</h2>
-      <div id="carruselShopEasy" class="carousel slide" data-bs-ride="carousel">
+    <section class="mb-5">
+      <h2 class="text-center mb-4 text-shopeasy">Destacados de la semana</h2>
+      <div id="carruselShopEasy" class="carousel slide shadow rounded" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carruselShopEasy" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carruselShopEasy" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carruselShopEasy" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carruselShopEasy" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner">
+        <div class="carousel-inner rounded">
           <div class="carousel-item active">
             <img src="img/carruselOferta.jpg" class="d-block w-100" alt="Oferta en electrónica">
-            <div class="carrusel-slide-contenido">
-              <h3></h3>
-              <p></p>
-            </div>
           </div>
           <div class="carousel-item">
             <img src="img/carruselEnvios.jpg" class="d-block w-100" alt="Envío gratis desde 50 dólares">
-            <div class="carrusel-slide-contenido">
-              <h3></h3>
-              <p></p>
-            </div>
           </div>
           <div class="carousel-item">
             <img src="img/carruselDestacados.jpg" class="d-block w-100" alt="Nuevos productos cada semana">
-            <div class="carrusel-slide-contenido">
-              <h3></h3>
-              <p></p>
-            </div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carruselShopEasy" data-bs-slide="prev">
@@ -158,175 +186,180 @@
           <span class="visually-hidden">Siguiente</span>
         </button>
       </div>
-      <hr>
     </section>
 
     <!-- SECCIÓN PRODUCTOS DESTACADOS -->
-    <section id="productos-destacados">
-      <h2>Productos destacados</h2>
-
-      <section class="grupo-tarjetas">
-        <article class="tarjeta">
-          <img src="img/auricularesInalambricos.jpg" alt="auriculares-bluetooth-pro">
-          <h3>Auriculares Bluetooth</h3>
-          <p>Categoría: Electrónica</p>
-          <p>Precio: <strong>$45.99</strong></p>
-          <p class="nota">Stock disponible: 12 unidades</p><br>
-          <button><a href="#">Ver detalle</a></button>
-          <button><a href="#carrito.html?agregar=501">Agregar al carrito</a></button>
-        </article>
-
-        <article class="tarjeta">
-          <img src="img/fundaLaptop.jpg" alt="funda-laptop-15">
-          <h3>Funda para laptop 15"</h3>
-          <p>Categoría: Accesorios</p>
-          <p>Precio: <strong>$18.50</strong></p>
-          <p class="nota">Stock disponible: 30 unidades</p><br>
-          <button><a href="#">Ver detalle</a></button>
-          <button><a href="#carrito.html?agregar=501">Agregar al carrito</a></button>
-        </article>
-
-        <article class="tarjeta">
-          <img src="img/camisetaDeportiva.jpg" alt="camiseta-deportiva">
-          <h3>Camiseta deportiva</h3>
-          <p>Categoría: Ropa</p>
-          <p>Precio: <strong>$12.00</strong></p>
-          <p class="nota">Stock disponible: 50 unidades</p><br>
-          <button><a href="#">Ver detalle</a></button>
-          <button><a href="#carrito.html?agregar=501">Agregar al carrito</a></button>
-        </article>
-      </section>
-      <hr />
+    <section id="productos-destacados" class="mb-5">
+      <!-- El contenido se genera dinámicamente con home.js -->
     </section>
 
     <!-- SECCIÓN BÚSQUEDA -->
-    <section id="busqueda">
-      <h2>Buscar productos</h2>
-      <form class="formulario-busqueda" action="catalogo/catalogo.html" method="get">
-        <label for="busqueda">¿Qué estás buscando?</label>
-        <input type="search" id="busqueda" name="q" placeholder="Ej: auriculares, camiseta, silla..." />
-        <button type="submit">Buscar</button>
-      </form>
-      <hr />
+    <section class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4 text-shopeasy">Buscar productos</h2>
+          <form action="catalogo/catalogo.html" method="get">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="busqueda" class="form-label">¿Qué estás buscando?</label>
+                <div class="input-group input-group-lg">
+                  <input type="search" class="form-control" id="busqueda" name="q" placeholder="Ej: auriculares, camiseta, silla..." />
+                  <button type="submit" class="btn btn-shopeasy">
+                    <i class="fa-solid fa-search me-2"></i>Buscar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CLIMA EN ECUADOR -->
+    <section id="widget-clima" class="mb-5">
+      <!-- El contenido se genera dinámicamente con home.js -->
     </section>
 
     <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
-    <section id="elegirnos">
-      <h2>¿Por qué elegir ShopEasy?</h2>
+    <section class="mb-5">
+      <h2 class="text-center mb-4 text-shopeasy">¿Por qué elegir ShopEasy?</h2>
 
-      <section class="grupo-tarjetas">
-        <article class="tarjeta">
-          <h3>Envío rápido</h3>
-          <p>Recibe tus pedidos en 24 a 48 horas en Santo Domingo y ciudades cercanas.</p>
-        </article>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm text-center p-4 producto-card">
+            <div class="mb-3">
+              <i class="fa-solid fa-truck-fast fa-3x text-shopeasy"></i>
+            </div>
+            <h3 class="h5 card-title">Envío rápido</h3>
+            <p class="card-text">Recibe tus pedidos en 24 a 48 horas en Santo Domingo y ciudades cercanas.</p>
+          </div>
+        </div>
 
-        <article class="tarjeta">
-          <h3>Pagos seguros</h3>
-          <p>Aceptamos tarjeta de crédito, débito y pago contra entrega.</p>
-        </article>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm text-center p-4 producto-card">
+            <div class="mb-3">
+              <i class="fa-solid fa-shield-halved fa-3x text-shopeasy"></i>
+            </div>
+            <h3 class="h5 card-title">Pagos seguros</h3>
+            <p class="card-text">Aceptamos tarjeta de crédito, débito y pago contra entrega.</p>
+          </div>
+        </div>
 
-        <article class="tarjeta">
-          <h3>Garantía de devolución</h3>
-          <p>Si no estás satisfecho, tienes 7 días para devolver tu compra sin costo.</p>
-        </article>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm text-center p-4 producto-card">
+            <div class="mb-3">
+              <i class="fa-solid fa-rotate-left fa-3x text-shopeasy"></i>
+            </div>
+            <h3 class="h5 card-title">Garantía de devolución</h3>
+            <p class="card-text">Si no estás satisfecho, tienes 7 días para devolver tu compra sin costo.</p>
+          </div>
+        </div>
 
-        <article class="tarjeta">
-          <h3>Atención al cliente</h3>
-          <p>Estamos disponibles de lunes a sábado de 8:00 a 18:00.</p>
-        </article>
-      </section>
-      <hr />
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm text-center p-4 producto-card">
+            <div class="mb-3">
+              <i class="fa-solid fa-headset fa-3x text-shopeasy"></i>
+            </div>
+            <h3 class="h5 card-title">Atención al cliente</h3>
+            <p class="card-text">Estamos disponibles de lunes a sábado de 8:00 a 18:00.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- SECCIÓN INFORMACIÓN -->
-    <section id="objetivo">
-      <!-- PREGUNTAS FRECUENTES (Bootstrap Accordion) -->
-      <section id="preguntas-frecuentes">
-        <h2>Preguntas frecuentes</h2>
-        <div class="accordion" id="accordionFAQ">
-
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                ¿Cuánto tiempo tarda el envío?
-              </button>
-            </h3>
-            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
-              <div class="accordion-body">
-                Entre 24 y 48 horas en Santo Domingo y ciudades cercanas. Otras zonas pueden tardar hasta 5 días
-                hábiles.
-              </div>
+    <!-- PREGUNTAS FRECUENTES (Bootstrap Accordion) -->
+    <section class="mb-5">
+      <h2 class="text-center mb-4 text-shopeasy">Preguntas frecuentes</h2>
+      <div class="accordion shadow-sm" id="accordionFAQ">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              ¿Cuánto tiempo tarda el envío?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body">
+              Entre 24 y 48 horas en Santo Domingo y ciudades cercanas. Otras zonas pueden tardar hasta 5 días hábiles.
             </div>
           </div>
-
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                ¿Qué métodos de pago aceptan?
-              </button>
-            </h3>
-            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-              <div class="accordion-body">
-                Aceptamos tarjeta de crédito, débito y pago contra entrega en efectivo.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                ¿Puedo devolver un producto?
-              </button>
-            </h3>
-            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-              <div class="accordion-body">
-                Sí, tienes 7 días desde la entrega para solicitar la devolución sin costo adicional.
-              </div>
-            </div>
-          </div>
-
         </div>
-      </section>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              ¿Qué métodos de pago aceptan?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body">
+              Aceptamos tarjeta de crédito, débito y pago contra entrega en efectivo.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              ¿Puedo devolver un producto?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body">
+              Sí, tienes 7 días desde la entrega para solicitar la devolución sin costo adicional.
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SECCIÓN OFERTA ESPECIAL -->
-    <section id="oferta">
-      <h2>Oferta del día</h2>
-      <p>¡Hoy solamente! 20% de descuento en toda la categoría de Electrónica.</p>
-      <p>Usa el código: <strong>SHOP20</strong></p>
-      <button><a href="catalogo/catalogo.html?categoria=electronica">Aprovechar oferta</a></button>
+    <section class="text-center p-5 bg-gradient bg-white rounded shadow-sm">
+      <h2 class="display-6 text-shopeasy mb-3">
+        <i class="fa-solid fa-tag me-2"></i>Oferta del día
+      </h2>
+      <p class="lead mb-2">¡Hoy solamente! 20% de descuento en toda la categoría de Electrónica.</p>
+      <p class="mb-4">Usa el código: <span class="badge bg-shopeasy fs-5">SHOP20</span></p>
+      <a href="catalogo/catalogo.html?categoria=electronica" class="btn btn-shopeasy btn-lg">
+        <i class="fa-solid fa-bolt me-2"></i>Aprovechar oferta
+      </a>
     </section>
 
   </main>
 
-  <!-- PIE DE PÁGINA -->
-  <footer>
-    <section class="footer-info">
-      <h3>ShopEasy</h3>
-      <p>Tu tienda online de confianza en Santo Domingo, Ecuador.</p>
-    </section>
+  <!-- FOOTER -->
+  <footer class="mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h3 class="h5 mb-3">ShopEasy</h3>
+          <p>Tu tienda online de confianza en Santo Domingo, Ecuador.</p>
+        </div>
 
-    <nav>
-      <h4>Páginas</h4>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="catalogo/catalogo.html">Catálogo</a></li>
-        <li><a href="carrito/carrito.html">Carrito</a></li>
-        <li><a href="login/login.html">Iniciar sesión</a></li>
-        <li><a href="registro/registro.html">Registrarse</a></li>
-      </ul>
-    </nav>
+        <div class="col-md-4">
+          <h4 class="h6 mb-3">Páginas</h4>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-decoration-none">Inicio</a></li>
+            <li><a href="catalogo/catalogo.html" class="text-decoration-none">Catálogo</a></li>
+            <li><a href="carrito/carrito.html" class="text-decoration-none">Carrito</a></li>
+            <li><a href="login/login.html" class="text-decoration-none">Iniciar sesión</a></li>
+            <li><a href="registro/registro.html" class="text-decoration-none">Registrarse</a></li>
+          </ul>
+        </div>
 
-    <address>
-      <h4>Contacto</h4>
-      <p>Email: <a href="mailto:contacto@shopeasy.ec">contacto@shopeasy.ec</a></p>
-      <p>Teléfono: <a href="tel:+593991234567">+593 99 123 4567</a></p>
-      <p>Santo Domingo de los Tsáchilas, Ecuador</p>
-      <p><strong>Dirección:</strong> Av. General Rumiñahui s/n, Sangolquí, Ecuador</p>
-      <p><a href="https://maps.app.goo.gl/a683TKhX5CdoCRYu8" target="_blank">Ver ubicación en Google Maps</a></p>
-    </address>
-
-    <small>&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</small>
+        <div class="col-md-4">
+          <h4 class="h6 mb-3">Contacto</h4>
+          <address class="mb-0">
+            <p class="mb-2"><i class="fa-solid fa-envelope me-2"></i>Email: <a href="mailto:contacto@shopeasy.ec" class="text-decoration-none">contacto@shopeasy.ec</a></p>
+            <p class="mb-2"><i class="fa-solid fa-phone me-2"></i>Teléfono: <a href="tel:+593991234567" class="text-decoration-none">+593 99 123 4567</a></p>
+            <p class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>Santo Domingo de los Tsáchilas, Ecuador</p>
+            <p class="mb-2"><strong>Dirección:</strong> Av. General Rumiñahui s/n, Sangolquí</p>
+            <p class="mb-0"><a href="https://maps.app.goo.gl/a683TKhX5CdoCRYu8" target="_blank" class="text-decoration-none"><i class="fa-solid fa-map-location-dot me-2"></i>Ver en Google Maps</a></p>
+          </address>
+        </div>
+      </div>
+      <hr class="my-4">
+      <p class="text-center mb-0">&copy; 2026 ShopEasy &reg; Todos los derechos reservados &trade;</p>
+    </div>
   </footer>
   <!-- Librerías externas -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -339,7 +372,6 @@
   <script src="js/api.js"></script>
   <script src="js/validaciones.js"></script>
   <script src="js/componentes.js"></script>
-  <script src="js/login.js"></script>
   <script src="js/home.js"></script>
 </body>
 
