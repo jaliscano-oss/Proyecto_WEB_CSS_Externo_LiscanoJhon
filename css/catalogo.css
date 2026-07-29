@@ -1,265 +1,17 @@
 /* ============================================================
-   BLOQUE 1: BARRA DE BÚSQUEDA DEL CATÁLOGO
-   Estilo del formulario de búsqueda superior.
+   catalogo.css - Estilos específicos para catalogo.html
    ============================================================ */
 
-#barra-busqueda {
-    background-color: #1a3c6e;
-    padding: 15px 20px;
-    text-align: center;
-}
-
-#barra-busqueda .formulario-busqueda {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-#barra-busqueda input[type="search"] {
-    width: 420px;
-    max-width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-}
-
-#barra-busqueda button {
-    background-color: #f76b1c;
-    color: #ffffff;
-    padding: 12px 20px;
-    border-radius: 8px;
-}
-
-#barra-busqueda button:hover {
-    background-color: #d4590e;
-}
-
-/* ============================================================
-   BLOQUE 2: LAYOUT DE DOS COLUMNAS (SIDEBAR + TABLA)
-   Estructura flex para mostrar filtros y productos lado a lado.
-   ============================================================ */
-
-#catalogo-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-/* ============================================================
-   BLOQUE 3: SIDEBAR DE FILTROS
-   Estilos del panel lateral de filtros.
-   ============================================================ */
-
-.sidebar {
-    width: 240px;
-    background-color: white;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.sidebar h2 {
-    font-size: 1.1em;
-    border-bottom: 2px solid #f76b1c;
-    padding-bottom: 8px;
-    margin-bottom: 15px;
-}
-
-.filtro-grupo {
-    margin-bottom: 18px;
-}
-
-.filtro-grupo h3 {
-    font-size: 0.95em;
-    color: #1a3c6e;
-    margin-bottom: 8px;
-}
-
-.filtro-grupo label {
-    display: block;
-    color: #333333;
-    font-weight: normal;
-    font-size: 0.9em;
-    margin-bottom: 5px;
-    cursor: pointer;
-}
-
-.filtro-grupo label:hover {
-    color: #2358a8;
-}
-
-.btn-filtro {
-    background-color: #2358a8;
-    color: #ffffff;
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-}
-
-.btn-filtro:hover {
-    background-color: #1a3c6e;
-}
-
-.btn-limpiar {
-    background-color: #f5f5f5;
-    color: #333333;
-    border: 1px solid #dddddd;
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.btn-limpiar:hover {
-    background-color: #eeeeee;
-}
-
-/* ============================================================
-   BLOQUE 4: TABLA DE PRODUCTOS
-   Estilos de la tabla principal del catálogo.
-   ============================================================ */
-
-#lista-productos {
-    flex: 1;
-}
-
-p.resultado-busqueda {
-    margin-bottom: 12px;
-    color: #666666;
-    font-size: 0.9em;
-}
-
-.tabla-wrap {
-    overflow-x: auto;
-}
-
-table {
-    width: auto;
-    border-collapse: collapse;
-    background-color: white;
-}
-
-th {
-    background-color: #1a3c6e;
-    color: white;
-    padding: 12px;
-    text-align: left;
-}
-
-td {
-    padding: 12px;
-    border-bottom: 1px solid #dddddd;
-}
-
-tr:nth-child(even) {
-    background-color: #f8f9fb;
-}
-
-tr:hover {
-    background-color: #eef4ff;
-}
-
-tbody td:first-child a {
-    color: #1a3c6e;
-    font-weight: bold;
-}
-
-tbody td:first-child a:hover {
-    color: #f76b1c;
-}
-
-/* ============================================================
-   BLOQUE 5: BADGES DE ESTADO (STOCK)
-   Indicadores visuales de disponibilidad de productos.
-   ============================================================ */
-
-.badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 15px;
-    font-size: 0.8em;
-    font-weight: bold;
-}
-
-.badge-verde {
-    background-color: #d4edda;
-    color: #1a6b35;
-}
-
-.badge-rojo {
-    background-color: #f8d7da;
-    color: #c0392b;
-}
-
-.badge-amarillo {
-    background-color: #fff3cd;
-    color: #856404;
-}
-
-/* ============================================================
-   BLOQUE 6: BOTONES DE ACCIÓN EN TABLA
-   Estilos de los enlaces "Ver" y "Agregar" en cada fila.
-   ============================================================ */
-
-.btn-ver {
-    background-color: #2358a8;
-    color: white !important;
-    padding: 6px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin: 10px;
-}
-
-.btn-ver:hover {
-    background-color: #1a3c6e;
-}
-
-.btn-agregar {
-    background-color: #f76b1c;
-    color: white !important;
-    padding: 6px 12px; 
-    margin: 0;
-    border-radius: 5px;
-}
-
-.btn-agregar:hover {
-    background-color: #d4590e;
-}
-
-/* ============================================================
-   BLOQUE 7: PAGINACIÓN / ENLACE ACTIVO
-   Resalta la página activa en la paginación del catálogo.
-   ============================================================ */
-
-.enlace-activo {
-    background-color: #2358a8;
-    color: #ffffff !important;
-    padding: 4px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.enlace-activo:hover {
-    background-color: #1a3c6e;
-    text-decoration: none !important;
-}
-
-/* BASE: móvil — sidebar y productos apilados verticalmente */
+/* Layout del catálogo */
 #catalogo-layout {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     gap: 20px;
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
 }
 
-/* Escritorio: sidebar y productos lado a lado */
 @media (min-width: 768px) {
     #catalogo-layout {
         flex-direction: row;
@@ -267,49 +19,417 @@ tbody td:first-child a:hover {
     }
 }
 
-/* ============================================================
-   BLOQUE 8: VISTA DE PRODUCTOS EN GRID
-   Organiza las tarjetas del catálogo en un mosaico con Grid.
-   ============================================================ */
-
-.productos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 15px;
+/* Sidebar de filtros */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 20px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.producto-card {
-    background-color: #ffffff;
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
+.sidebar form {
     padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* Header de filtros */
+.filtros-header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid #f76b1c;
+    background: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.filtros-header h2 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #1a3c6e;
+    display: flex;
+    align-items: center;
     gap: 8px;
 }
 
-.producto-card h3 {
-    color: #1a3c6e;
+.filtros-header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-limpiar-filtros {
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.btn-limpiar-filtros:hover {
+    background: #f0f0f0;
+    color: #f76b1c;
+    transform: rotate(360deg);
+}
+
+/* Grupos de filtros */
+.filtro-grupo {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.filtro-grupo:last-of-type {
+    border-bottom: none;
+}
+
+.filtro-grupo h3 {
     font-size: 0.95em;
+    color: #1a3c6e;
+    margin-bottom: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filtro-grupo h3 i {
+    color: #f76b1c;
+    font-size: 0.9em;
+}
+
+/* Selects personalizados */
+.filtro-grupo select {
+    transition: all 0.3s;
+}
+
+.filtro-grupo select:hover {
+    border-color: #2358a8;
+}
+
+.filtro-grupo select:focus {
+    border-color: #f76b1c;
+    box-shadow: 0 0 0 3px rgba(247, 107, 28, 0.1);
+}
+
+/* Radio buttons personalizados */
+.filtro-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filtro-radio, .filtro-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    font-size: 0.9em;
+}
+
+.filtro-radio:hover, .filtro-checkbox:hover {
+    background: #f0f8ff;
+}
+
+.filtro-radio input[type="radio"],
+.filtro-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.filtro-radio input[type="radio"]:checked + .radio-custom {
+    border-color: #f76b1c;
+    background: #f76b1c;
+}
+
+.filtro-radio input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+}
+
+.checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.filtro-checkbox input[type="checkbox"]:checked + .checkbox-custom {
+    border-color: #f76b1c;
+    background: #f76b1c;
+}
+
+.filtro-checkbox input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 10px;
+}
+
+.rating-stars {
+    color: #ffa500;
+    font-size: 1em;
+}
+
+/* Inputs de precio */
+.precio-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.input-wrapper {
+    flex: 1;
+}
+
+.input-wrapper label {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
     margin-bottom: 4px;
 }
 
-.producto-card .precio {
-    color: #1a6b35;
-    font-weight: bold;
-    font-size: 1.1em;
+.input-wrapper input:focus {
+    border-color: #f76b1c;
+    box-shadow: 0 0 0 3px rgba(247, 107, 28, 0.1);
 }
 
-.producto-card .acciones {
-    display: flex;
+.precio-separator {
+    color: #999;
+    margin-top: 20px;
+}
+
+.btn-aplicar-precio {
+    width: 100%;
+    padding: 8px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    border-radius: 6px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-aplicar-precio:hover {
+    background: #2e7d32;
+    color: white;
+}
+
+/* Botón aplicar filtros */
+.btn-aplicar-filtros {
+    background: linear-gradient(135deg, #f76b1c 0%, #d4590e 100%);
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(247, 107, 28, 0.3);
+}
+
+.btn-aplicar-filtros:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(247, 107, 28, 0.4);
+}
+
+/* Botón flotante de filtros para móviles */
+.btn-filtros-mobile {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: linear-gradient(135deg, #f76b1c 0%, #d4590e 100%);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-size: 0.95em;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(247, 107, 28, 0.4);
+    cursor: pointer;
+    z-index: 998;
     gap: 8px;
-    margin-top: auto;
+    transition: all 0.3s;
 }
 
-/* BASE: móvil — 1 columna */
+.btn-filtros-mobile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(247, 107, 28, 0.5);
+}
+
+/* Overlay para drawer */
+.filtros-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.filtros-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.btn-cerrar-filtros-mobile {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 1.3em;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.btn-cerrar-filtros-mobile:hover {
+    background: #f0f0f0;
+    color: #f76b1c;
+}
+
+/* Responsive - Móviles */
+@media (max-width: 767px) {
+    .btn-filtros-mobile {
+        display: flex;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        border-radius: 0;
+        z-index: 1000;
+        overflow-y: auto;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .btn-cerrar-filtros-mobile {
+        display: block;
+    }
+}
+
+/* Lista de productos */
+#lista-productos {
+    flex: 1;
+}
+
+/* Header de productos */
+.productos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.resultado-busqueda {
+    margin: 0;
+    color: #666666;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+/* Toggle de vistas */
+.vista-toggle {
+    display: flex;
+    gap: 5px;
+    background: #f5f5f5;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.btn-vista {
+    padding: 8px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #666;
+    font-size: 1.1em;
+    transition: all 0.3s;
+}
+
+.btn-vista:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.btn-vista.active {
+    background: #007bff;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Control de visibilidad */
+.vista-activa {
+    display: block !important;
+}
+
+.vista-oculta {
+    display: none !important;
+}
+
+.productos-grid.vista-activa {
+    display: grid !important;
+}
+
+/* Grid de productos */
 .productos-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -317,45 +437,91 @@ tbody td:first-child a:hover {
     margin-top: 15px;
 }
 
-/* Tablet: 2 columnas */
 @media (min-width: 600px) {
     .productos-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Escritorio: 3 columnas */
 @media (min-width: 992px) {
     .productos-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* ============================================================
-   BLOQUE 9: MODAL PERSONALIZADO (Bootstrap)
-   ============================================================ */
-
-.modal-producto {
-    border-radius: 12px;
-    border: none;
+.producto-card {
+    transition: all 0.3s ease;
 }
 
-.modal-producto .modal-header {
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Tabla de productos */
+.tabla-wrap {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tabla-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-wrap th {
     background-color: #1a3c6e;
-    color: #ffffff;
-    border-radius: 12px 12px 0 0;
+    color: white;
+    padding: 12px;
+    text-align: left;
 }
 
-.modal-producto .modal-title {
-    color: #ffffff;
-    font-size: 1.2em;
+.tabla-wrap td {
+    padding: 12px;
+    border-bottom: 1px solid #dddddd;
 }
 
-.btn-cerrar-modal {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.5em;
-    line-height: 1;
-    cursor: pointer;
+.tabla-wrap tr:nth-child(even) {
+    background-color: #f8f9fb;
+}
+
+.tabla-wrap tr:hover {
+    background-color: #eef4ff;
+}
+
+/* Botones de acción en tabla */
+.btn-ver {
+    background-color: #2358a8;
+    color: white !important;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 8px;
+    transition: all 0.3s;
+}
+
+.btn-ver:hover {
+    background-color: #1a3c6e;
+    transform: translateY(-2px);
+}
+
+.btn-agregar {
+    background-color: #f76b1c;
+    color: white !important;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn-agregar:hover {
+    background-color: #d4590e;
+    transform: translateY(-2px);
+}
+
+/* Paginación */
+.paginacion-container {
+    margin-top: 30px;
+    text-align: center;
 }

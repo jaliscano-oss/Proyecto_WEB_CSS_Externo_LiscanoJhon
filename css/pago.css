@@ -1,0 +1,141 @@
+/* ============================================================
+   pago.css - Estilos específicos para pago.html
+   ============================================================ */
+
+/* Indicador de pasos mejorado */
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.step::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    right: -50%;
+    height: 2px;
+    background: #ddd;
+    z-index: -1;
+}
+
+.step:last-child::before {
+    display: none;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ddd;
+    color: #666;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+    background: #007bff;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.step.completed .step-number {
+    background: #28a745;
+    color: white;
+}
+
+/* Métodos de pago mejorados */
+.payment-method {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-method:hover {
+    border-color: #007bff;
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.payment-method.selected {
+    border-color: #007bff;
+    background: #e7f3ff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+/* Preview de tarjeta mejorado */
+.card-preview {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.card-preview:hover {
+    transform: scale(1.02);
+}
+
+/* Inputs de tarjeta mejorados */
+#datos-tarjeta .form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+/* Resumen sticky mejorado */
+.sticky-top {
+    top: 20px;
+}
+
+/* Animación de entrada */
+.card {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botón de pagar destacado */
+.btn-primary.btn-lg {
+    background: linear-gradient(135deg, #28a745 0%, #20803d 100%);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary.btn-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* Icono de seguridad */
+.text-muted .fa-shield-halved {
+    color: #28a745;
+}

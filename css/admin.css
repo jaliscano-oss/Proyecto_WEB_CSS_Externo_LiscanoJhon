@@ -1,0 +1,63 @@
+/* admin.css - Estilos específicos del panel de administración */
+
+/* Stats cards */
+.stats-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-card h3 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.stats-card p {
+    margin: 10px 0 0 0;
+    opacity: 0.9;
+}
+
+.stats-card.purple {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stats-card.pink {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stats-card.blue {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stats-card.green {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* Admin tabs */
+.admin-tabs .nav-link {
+    color: #495057;
+    font-weight: 500;
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.admin-tabs .nav-link:hover {
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+
+.admin-tabs .nav-link.active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+    background: transparent;
+}

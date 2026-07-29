@@ -1,406 +1,159 @@
 /* ============================================================
-   BLOQUE 1: SECCIÓN PRESENTACIÓN (HERO)
-   Estilos propios de la sección de bienvenida principal.
+   home.css - Estilos específicos para index.html
    ============================================================ */
 
-#presentacion {
-    background: linear-gradient(135deg, #1a3c6e 0%, #2358a8 100%);
-    color: #ffffff;
-    padding: 60px 30px;
-    border-radius: 12px;
-    margin-bottom: 30px;
+/* Animaciones para elementos */
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
 }
 
-#presentacion h2 {
-    color: #ffffff;
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-#presentacion p {
-    color: #d0dff5;
-    font-size: 1.1em;
-    margin-bottom: 25px;
-}
-
-#presentacion button {
-    background-color: #f76b1c;
-    color: #ffffff;
-    padding: 12px 28px;
-    font-size: 1em;
-    border-radius: 8px;
-    margin: 5px;
-}
-
-#presentacion button:hover {
-    background-color: #d4590e;
-}
-
-/* ============================================================
-   BLOQUE 2: TARJETAS REUTILIZABLES
-   Estilos para la clase .tarjeta usada en múltiples secciones.
-   ============================================================ */
-
-.grupo-tarjetas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.tarjeta {
-    width: 220px;
-    background-color: #ffffff;
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-align: center;
-}
-
-.tarjeta:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(35, 88, 168, 0.15);
-}
-
-.tarjeta h3 {
-    color: #1a3c6e;
-    margin-bottom: 8px;
-    font-size: 1em;
-}
-
-.tarjeta p {
-    color: #666666;
-    font-size: 0.9em;
-    margin-bottom: 12px;
-}
-
-/* ============================================================
-   BLOQUE 3: NOTA DE STOCK
-   Estilo para párrafos con clase .nota (stock, avisos).
-   ============================================================ */
-
-p.nota {
-    font-size: 0.85em;
-    color: #1a6b35;
-    background-color: #d4edda;
-    border-radius: 5px;
-    padding: 4px 10px;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-/* ============================================================
-   BLOQUE 4: SECCIÓN BÚSQUEDA
-   Estilos del formulario de búsqueda en la página de inicio.
-   ============================================================ */
-
-#busqueda {
-    background-color: #f0f4ff;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-#busqueda h2 {
-    margin-bottom: 15px;
-}
-
-.formulario-busqueda {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.formulario-busqueda input[type="search"] {
-    width: 380px;
-    max-width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #dddddd;
-}
-
-.formulario-busqueda button {
-    padding: 12px 24px;
-    background-color: #f76b1c;
-    color: #ffffff;
-    border-radius: 8px;
-}
-
-.formulario-busqueda button:hover {
-    background-color: #d4590e;
-}
-
-/* ============================================================
-   BLOQUE 5: SECCIÓN ¿POR QUÉ ELEGIRNOS?
-   Estilos específicos para la sección de ventajas.
-   ============================================================ */
-
-#elegirnos {
-    background-color: #f3f0ff;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-#elegirnos h2 {
-    margin-bottom: 20px;
-}
-
-/* ============================================================
-   BLOQUE 6: SECCIÓN OBJETIVO (DETAILS/SUMMARY)
-   Estilos para la sección con el elemento details.
-   ============================================================ */
-
-#objetivo {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-}
-
-#objetivo details {
-    background-color: #ffffff;
-    border-left: 6px solid #2358a8;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px #dddddd;
-}
-
-#objetivo summary {
-    font-weight: bold;
-    color: #1a3c6e;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-#objetivo details p {
-    margin-top: 10px;
-    color: #666666;
-}
-
-/* ============================================================
-   BLOQUE 7: OFERTA DEL DÍA
-   Estilos del banner de oferta especial.
-   ============================================================ */
-
-#oferta {
-    background-color: #fff3cd;
-    border: 2px solid #f76b1c;
-    border-radius: 12px;
-    padding: 30px;
-}
-
-#oferta h2 {
-    color: #856404;
-}
-
-#oferta p {
-    color: #856404;
-}
-
-#oferta button {
-    background-color: #f76b1c;
-    color: #ffffff;
-    padding: 12px 28px;
-    border-radius: 8px;
-    margin-top: 5px;
-}
-
-#oferta button:hover {
-    background-color: #d4590e;
-}
-
-/* ============================================================
-   BLOQUE 8: LOGO EN HEADER
-   Estilo de la figura del logo en el encabezado.
-   ============================================================ */
-
-.logo-contenido {
-    margin-bottom: 8px;
-}
-
-.logo-contenido img {
-    width: 60px;
-    height: 60px;
-}
-
-/* ============================================================
-   BLOQUE 9: HEADER CON FLEXBOX
-   Alinea logo, título y nav dentro del header.
-   ============================================================ */
-
-/* header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
- */
-#productos-destacados .tarjeta {
-    text-align: left;
-}
-/* ============================================================
-   BLOQUE 10: GALERÍA VISUAL DE CATEGORÍAS CON GRID
-   Presenta las categorías como un mosaico de tarjetas con Grid.
-   ============================================================ */
-
-/* BASE: móvil — 1 columna */
-#categorias .grupo-tarjetas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin: 20px 0;
-}
-
-/* Tablet en adelante: 2 columnas */
-@media (min-width: 600px) {
-    #categorias .grupo-tarjetas {
-        grid-template-columns: repeat(2, 1fr);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* Escritorio en adelante: 4 columnas */
-@media (min-width: 992px) {
-    #categorias .grupo-tarjetas {
-        grid-template-columns: repeat(4, 1fr);
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
-/* ============================================================
-   BLOQUE 11: SECCIÓN DE PRODUCTOS DESTACADOS CON GRID
-   Organiza los productos destacados en columnas con Grid.
-   ============================================================ */
-
-/* BASE: móvil — 1 columna */
-#productos-destacados .grupo-tarjetas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin: 20px 0;
-    text-align: left;
-}
-
-/* Tablet: 2 columnas */
-@media (min-width: 600px) {
-    #productos-destacados .grupo-tarjetas {
-        grid-template-columns: repeat(2, 1fr);
-        text-align: center;
-    }
-}
-
-/* Escritorio: 3 columnas */
-@media (min-width: 900px) {
-    #productos-destacados .grupo-tarjetas {
-        grid-template-columns: repeat(3, 1fr);
-        text-align: left;
-    }
-}
-
-/* ============================================================
-   BLOQUE 12: MEJORAS BOX MODEL EN TARJETAS
-   Aplica correctamente width, padding, border y border-radius.
-   ============================================================ */
-
-.tarjeta {
-    width: 100%; /* ocupa la columna del Grid */
-    box-sizing: border-box;
-}
-
-/* ============================================================
-   BLOQUE 13: SECCIÓN ¿POR QUÉ ELEGIRNOS? — FLEXBOX
-   Distribuye las ventajas en fila con Flexbox.
-   ============================================================ */
-
-#elegirnos .grupo-tarjetas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-#elegirnos .tarjeta {
-    flex: 1 1 200px;
-    max-width: 260px;
-}
-
-/* ============================================================
-   BLOQUE 14: CARRUSEL PERSONALIZADO (Bootstrap)
-   ============================================================ */
-
-#carrusel-ofertas .carousel {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-}
-
-.carousel-item {
-    position: relative;
-    background-color: #1a3c6e; 
-}
-
-.carousel-item img {
-    height: 400px;
-    width: 100%;
-    object-fit: cover;
-    filter: brightness(0.55);
-}
-
-.carrusel-slide-contenido {
-    position: absolute;
+/* Loader de bienvenida */
+#welcome-loader {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 160%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 20px;
-    color: #ffffff;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
 }
 
-.carrusel-slide-contenido h3 {
-    color: #ffffff;
-    font-size: 1.6em;
-    margin-bottom: 10px;
+#welcome-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
-.carrusel-slide-contenido p {
-    color: #f0f0f0;
-    font-size: 1.05em;
+.loader-logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
-.carousel-indicators [data-bs-target] {
-    background-color: #f76b1c;
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
-/* ============================================================
-   BLOQUE 15: ACCORDION PERSONALIZADO (Bootstrap)
-   ============================================================ */
-
-#preguntas-frecuentes .accordion-item {
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-}
-
-#preguntas-frecuentes .accordion-button {
+.loader-text {
+    color: white;
+    font-size: 2em;
     font-weight: bold;
-    color: #1a3c6e;
-    background-color: #ffffff;
+    margin-bottom: 20px;
 }
 
-#preguntas-frecuentes .accordion-button:not(.collapsed) {
-    color: #2358a8;
-    background-color: #f0f4ff;
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
-#preguntas-frecuentes .accordion-button:focus {
-    box-shadow: 0 0 0 2px #2358a8;
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Efectos hover en tarjetas */
+.tarjeta {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Banner de notificación */
+.notification-banner {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    max-width: 350px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 1000;
+    animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.notification-banner.show {
+    display: block;
+}
+
+
+/* Estilos del loader de bienvenida */
+.loader-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
+}
+
+/* Estilos del banner de notificación */
+.notification-custom {
+    z-index: 1050;
+    max-width: 350px;
+    display: none;
+}
+
+.notification-custom.show {
+    display: block !important;
+}
+
+/* Badge del carrito flotante */
+.floating-cart-badge {
+    display: none !important;
+}
+
+.floating-cart-badge.show {
+    display: flex !important;
 }
 
